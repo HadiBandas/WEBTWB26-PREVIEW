@@ -301,15 +301,17 @@ function App() {
       {/* --- FOOTER --- */}
       <Footer navigate={navigate} />
 
-      {/* Floating WA Button */}
-      <a
-        href="https://wa.me/6281224178271"
-        target="_blank"
-        rel="noreferrer"
-        className="fixed bottom-32 right-4 lg:bottom-8 lg:right-8 z-50 bg-whatsapp text-white p-3 lg:p-4 rounded-full shadow-strong hover:scale-110 transition-transform flex items-center gap-2 group"
-      >
-        <MessageCircle size={24} />
-      </a>
+      {/* Floating WA Button - Hidden on pages with their own sticky CTAs */}
+      {!['about', 'blog', 'faq', 'contact', 'offers', 'location'].includes(view) && (
+        <a
+          href="https://wa.me/6281224178271"
+          target="_blank"
+          rel="noreferrer"
+          className="fixed bottom-32 right-4 lg:bottom-8 lg:right-8 z-50 bg-whatsapp text-white p-3 lg:p-4 rounded-full shadow-strong hover:scale-110 transition-transform flex items-center gap-2 group"
+        >
+          <MessageCircle size={24} />
+        </a>
+      )}
 
     </div>
   );
