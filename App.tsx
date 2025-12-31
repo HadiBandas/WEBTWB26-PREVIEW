@@ -215,8 +215,11 @@ function App() {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-40 bg-forest-dark text-white pt-24 px-6 transition-transform duration-500 lg:hidden ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <nav className="flex flex-col gap-6 text-2xl font-serif font-bold">
+      <div
+        className={`fixed inset-0 z-40 bg-forest-dark text-white pt-24 transition-transform duration-500 lg:hidden overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
+        style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 24px), 24px)' }}
+      >
+        <nav className="flex flex-col gap-4 text-2xl font-serif font-bold px-6">
           <button onClick={() => { navigate('home'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.home')}</button>
           <button onClick={() => { navigate('villas'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.villas')}</button>
           <button onClick={() => { navigate('resto'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.resto')}</button>
