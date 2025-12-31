@@ -208,9 +208,16 @@
     "location": {
         "title": "Lokasi Kami",
         "subtitle": "Terletak di jantung Gunung Puntang, hanya 2 jam dari Jakarta. Rasakan ketenangan alam.",
+        "getDirections": "Petunjuk Arah",
+        "yourJourney": "Perjalanan Anda",
+        "travelTimesTitle": "Waktu Perjalanan & Petunjuk Arah",
         "directions": "Petunjuk Arah",
         "fromJakarta": "Dari Jakarta",
-        "fromBandung": "Dari Bandung"
+        "fromBandung": "Dari Bandung",
+        "mapSectionLabel": "Peta Lokasi",
+        "ourLocation": "Lokasi Kami",
+        "nearbyLabel": "Wisata Sekitar",
+        "nearbyTitle": "Tempat Wisata Terdekat"
     },
     "blog": {
         "title": "Blog & Berita",

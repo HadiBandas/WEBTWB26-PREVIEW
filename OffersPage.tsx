@@ -29,7 +29,7 @@ export function OffersPage({ onBookOffer }: OffersPageProps) {
             const offer = OFFERS.find(o => o.id === offerId);
             const offerTitle = offer ? getContent(offer.title) : 'Offer';
             const whatsappMessage = `Hello! I'm interested in the "${offerTitle}" package. I'd like to know more details.`;
-            window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
+            window.open(`https://wa.me/6281224178271?text=${encodeURIComponent(whatsappMessage)}`, '_blank');
         }
     };
 
@@ -38,7 +38,7 @@ export function OffersPage({ onBookOffer }: OffersPageProps) {
         if (booking) {
             booking.scrollIntoView({ behavior: 'smooth' });
         } else {
-            window.open('https://wa.me/6281234567890?text=I would like to make a reservation', '_blank');
+            window.open('https://wa.me/6281224178271?text=I would like to make a reservation', '_blank');
         }
     };
 

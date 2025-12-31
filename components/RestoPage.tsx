@@ -42,7 +42,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
             "postalCode": "40228",
             "addressCountry": "ID"
           },
-          "telephone": "+6281234567890",
+          "telephone": "+6281224178271",
           "url": "https://bougenville.com/resto"
         }}
       />
@@ -210,7 +210,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 {t('resto.cta.discover')}
               </p>
               <a
-                href="https://wa.me/6281234567890?text=Halo, saya ingin melihat menu lengkap Bale Puntang"
+                href="https://wa.me/6281224178271?text=Halo, saya ingin melihat menu lengkap Bale Puntang"
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center gap-2 border-b border-gray-900 pb-1 text-gray-900 text-sm uppercase tracking-[0.2em] hover:text-forest hover:border-forest transition-colors group"
@@ -274,13 +274,13 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 </div>
                 <h4 className="font-serif text-xl text-gray-900 mb-3">{t('resto.reservation.reservationTitle')}</h4>
                 <a
-                  href="tel:+6281234567890"
+                  href="tel:+6281224178271"
                   className="text-gray-600 text-sm hover:text-forest block mb-1 transition-colors"
                 >
                   +62 812 3456 7890
                 </a>
                 <a
-                  href="https://wa.me/6281234567890?text=Halo, saya ingin reservasi meja di Bale Puntang"
+                  href="https://wa.me/6281224178271?text=Halo, saya ingin reservasi meja di Bale Puntang"
                   target="_blank"
                   rel="noreferrer"
                   className="text-forest text-sm font-medium hover:underline"
@@ -314,7 +314,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
             {t('resto.cta.subtitle')}
           </p>
           <a
-            href="https://wa.me/6281234567890?text=Halo Bale Puntang, saya ingin reservasi meja"
+            href="https://wa.me/6281224178271?text=Halo Bale Puntang, saya ingin reservasi meja"
             target="_blank"
             rel="noreferrer"
             className="inline-flex items-center gap-4 bg-gray-900 text-white px-12 py-5 text-sm uppercase tracking-[0.2em] font-medium hover:bg-forest transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1"

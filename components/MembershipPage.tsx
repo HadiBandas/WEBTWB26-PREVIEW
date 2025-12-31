@@ -26,7 +26,7 @@ export function MembershipPage() {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         const text = `*Request to Join Bougenville Circle*\n\nName: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCity: ${formData.location}\nPreference: ${formData.villaPreference}\nOccasion: ${formData.occasion}`;
-        window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(text)}`, '_blank');
+        window.open(`https://wa.me/6281224178271?text=${encodeURIComponent(text)}`, '_blank');
     };
 
     return (

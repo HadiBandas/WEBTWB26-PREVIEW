@@ -21,7 +21,7 @@ export function BookingCard({ price, rating = 4.9, reviews = 120, villaId, villa
     const handleBook = () => {
         // Format WhatsApp message
         const message = `Hi, I'm interested in booking ${villaName}%0A%0ACheck-in: ${checkIn || 'TBD'}%0ACheck-out: ${checkOut || 'TBD'}%0AGuests: ${guests}%0A%0APlease confirm availability.`;
-        const whatsappUrl = `https://wa.me/6281234567890?text=${message}`;
+        const whatsappUrl = `https://wa.me/6281224178271?text=${message}`;
         window.open(whatsappUrl, '_blank');
     };
 

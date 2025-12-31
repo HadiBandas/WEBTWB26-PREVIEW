@@ -14,7 +14,7 @@ export function AboutPage() {
         if (booking) {
             booking.scrollIntoView({ behavior: 'smooth' });
         } else {
-            window.open('https://wa.me/6281234567890?text=I would like to make a reservation', '_blank');
+            window.open('https://wa.me/6281224178271?text=I would like to make a reservation', '_blank');
         }
     };
 

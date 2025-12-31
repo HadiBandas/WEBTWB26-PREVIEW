@@ -16,7 +16,7 @@ export function ContactPage() {
         if (booking) {
             booking.scrollIntoView({ behavior: 'smooth' });
         } else {
-            window.open('https://wa.me/6281234567890?text=I would like to make a reservation', '_blank');
+            window.open('https://wa.me/6281224178271?text=I would like to make a reservation', '_blank');
         }
     };
 
@@ -42,7 +42,7 @@ export function ContactPage() {
                     "mainEntity": {
                         "@type": "Organization",
                         "name": "Taman Wisata Bougenville",
-                        "telephone": "+6281234567890",
+                        "telephone": "+6281224178271",
                         "email": "reservation@bougenville.com",
                         "address": {
                             "@type": "PostalAddress",
@@ -74,7 +74,7 @@ export function ContactPage() {
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16 mb-16">
                         <a
-                            href="tel:+6281234567890"
+                            href="tel:+6281224178271"
                             className="text-center hover:-translate-y-2 transition-transform duration-300 group animate-fade-in-up delay-100"
                         >
                             <div className="w-24 h-24 bg-gray-50 rounded-full flex items-center justify-center mx-auto mb-8 group-hover:bg-forest group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -86,7 +86,7 @@ export function ContactPage() {
                         </a>
 
                         <a
-                            href="https://wa.me/6281234567890"
+                            href="https://wa.me/6281224178271"
                             target="_blank"
                             rel="noreferrer"
                             className="text-center hover:-translate-y-2 transition-transform duration-300 group animate-fade-in-up delay-200"

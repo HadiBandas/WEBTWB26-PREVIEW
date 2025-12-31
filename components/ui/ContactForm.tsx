@@ -83,7 +83,7 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
                     formData.message
                 ].filter(Boolean).join('\n');
 
-                const whatsappLink = `https://wa.me/6281234567890?text=${encodeURIComponent(whatsappMessage)}`;
+                const whatsappLink = `https://wa.me/6281224178271?text=${encodeURIComponent(whatsappMessage)}`;
                 window.open(whatsappLink, '_blank');
             }
 

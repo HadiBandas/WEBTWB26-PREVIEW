@@ -8,7 +8,7 @@ export interface StickyBookingCTAProps {
 
 export function StickyBookingCTA({
     onBookClick,
-    whatsappNumber = '6281234567890'
+    whatsappNumber = '6281224178271'
 }: StickyBookingCTAProps) {
     const [isVisible, setIsVisible] = useState(false);
 

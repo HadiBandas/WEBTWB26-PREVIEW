@@ -15,7 +15,7 @@ export function LocationPage() {
         if (booking) {
             booking.scrollIntoView({ behavior: 'smooth' });
         } else {
-            window.open('https://wa.me/6281234567890?text=I would like to make a reservation', '_blank');
+            window.open('https://wa.me/6281224178271?text=I would like to make a reservation', '_blank');
         }
     };
 
@@ -54,12 +54,12 @@ export function LocationPage() {
                 }}
             />
             <PageHero
-                title="Find Us"
-                subtitle="Your mountain sanctuary awaits. Only 2 hours from Jakarta."
+                title={t('location.title')}
+                subtitle={t('location.subtitle')}
                 backgroundImage="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070"
                 overlay="dark"
                 ctaPrimary={{
-                    text: 'Get Directions',
+                    text: t('location.getDirections'),
                     onClick: () => {
                         window.open('https://maps.google.com/?q=Gunung+Puntang+Bandung', '_blank');
                     }
@@ -70,9 +70,9 @@ export function LocationPage() {
             <section className="py-24 md:py-32">
                 <div className="container mx-auto px-6 md:px-8">
                     <div className="text-center mb-20 animate-fade-in-up">
-                        <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">Perjalanan Anda</span>
+                        <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">{t('location.yourJourney')}</span>
                         <h2 className="font-serif text-4xl md:text-5xl text-gray-900 mb-8 tracking-wide">
-                            Travel Times & Directions
+                            {t('location.travelTimesTitle')}
                         </h2>
                         <div className="w-24 h-px bg-gold/60 mx-auto"></div>
                     </div>

@@ -207,11 +207,18 @@
         }
     },
     "location": {
-        "title": "Our Location",
-        "subtitle": "Located in the heart of Mount Puntang, just 2 hours from Jakarta. Experience the serenity of nature.",
+        "title": "Find Us",
+        "subtitle": "Your mountain sanctuary awaits. Only 2 hours from Jakarta.",
+        "getDirections": "Get Directions",
+        "yourJourney": "Your Journey",
+        "travelTimesTitle": "Travel Times & Directions",
         "directions": "Directions",
         "fromJakarta": "From Jakarta",
-        "fromBandung": "From Bandung"
+        "fromBandung": "From Bandung",
+        "mapSectionLabel": "Map Location",
+        "ourLocation": "Our Location",
+        "nearbyLabel": "Nearby Attractions",
+        "nearbyTitle": "Nearby Attractions"
     },
     "blog": {
         "title": "Blog & News",

@@ -82,7 +82,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ initialVilla, initialPackage 
   const getWhatsappLink = () => {
     const itemName = selectedItem ? ('name' in selectedItem ? selectedItem.name : selectedItem.title) : 'Stay';
     const text = `Greetings Bougenville Concierge,\n\nI would like to confirm my reservation request (Ref: ${bookingRefId}).\n\nSelection: ${itemName}\nDates: ${state.checkIn} to ${state.checkOut}\nGuests: ${state.guests}\nName: ${state.name}\n\nSpecial Request: ${state.specialRequest}`;
-    return `https://wa.me/6281234567890?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/6281224178271?text=${encodeURIComponent(text)}`;
   };
 
   if (isSuccess) {

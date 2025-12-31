@@ -36,7 +36,7 @@ export function HomePage() {
     };
 
     const handleBookNow = () => {
-        window.open(`https://wa.me/6281234567890?text=${encodeURIComponent(t('home.whatsapp.inquiry'))}`, '_blank');
+        window.open(`https://wa.me/6281224178271?text=${encodeURIComponent(t('home.whatsapp.inquiry'))}`, '_blank');
     };
 
     const handlePrevImage = (villaId: string, totalImages: number) => {
@@ -79,7 +79,7 @@ export function HomePage() {
                 onPrimaryCTA={() => {
                     // Open WhatsApp with booking inquiry
                     const message = encodeURIComponent(t('home.whatsapp.inquiry', 'Halo, saya tertarik untuk reservasi di Taman Wisata Bougenville. Bisa dibantu?'));
-                    window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+                    window.open(`https://wa.me/6281224178271?text=${message}`, '_blank');
                 }}
                 onSecondaryCTA={() => {
                     // Smooth scroll to villas section
@@ -94,7 +94,7 @@ export function HomePage() {
                     <button
                         onClick={() => {
                             const message = encodeURIComponent(t('home.whatsapp.inquiry', 'Halo, saya tertarik untuk reservasi di Taman Wisata Bougenville. Bisa dibantu?'));
-                            window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+                            window.open(`https://wa.me/6281224178271?text=${message}`, '_blank');
                         }}
                         className="bg-gold text-forest-dark px-8 py-4 text-sm font-bold uppercase tracking-widest hover:bg-white transition-all duration-300 rounded-sm flex items-center gap-2"
                     >
