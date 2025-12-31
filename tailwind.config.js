@@ -13,6 +13,7 @@ export default {
     extend: {
       colors: {
         // Consolidated colors from index.html (Source of Truth)
+        'forest': '#1A3D2E',       // Primary Forest Green (Fix for undefined class)
         'forest-green': '#1A3D2E', // Deep Forest Green - Primary
         'forest-dark': '#0F261C',  // Darker shade for text
         'gold': '#D4AF37',         // Warm Gold - Accent

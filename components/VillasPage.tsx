@@ -492,7 +492,7 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
                 className={`
                   flex items-center gap-2 px-4 py-2 rounded-full text-sm tracking-wide transition-all duration-300 whitespace-nowrap active:scale-95
                   ${activeTab === cat.id
-                    ? 'bg-forest text-white shadow-lg shadow-forest/20'
+                    ? 'bg-forest-green text-white shadow-lg shadow-forest-green/20'
                     : 'bg-transparent text-gray-500 hover:bg-gray-50 hover:text-gray-900'}
                 `}
               >
@@ -584,7 +584,7 @@ const VillaCard: React.FC<{ villa: any }> = ({ villa }) => {
         </div>
 
         {/* Action */}
-        <button className="w-full py-3 border-2 border-gray-200 text-gray-600 text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-forest hover:text-white hover:border-forest transition-all duration-300 rounded-lg flex items-center justify-center gap-2 group-hover:bg-forest group-hover:text-white group-hover:border-forest active:scale-95">
+        <button className="w-full py-3 border-2 border-gray-200 text-gray-600 text-xs md:text-sm uppercase tracking-[0.2em] hover:bg-forest-green hover:text-white hover:border-forest-green transition-all duration-300 rounded-lg flex items-center justify-center gap-2 group-hover:bg-forest-green group-hover:text-white group-hover:border-forest-green active:scale-95">
           <span>{t('home.viewDetails')}</span>
           <ArrowRight size={14} />
         </button>
