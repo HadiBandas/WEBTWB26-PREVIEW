@@ -8,17 +8,21 @@ export default {
   theme: {
     extend: {
       colors: {
-        forest: {
-          DEFAULT: '#2D5F4C',
-          dark: '#1F4A38',
-          green: '#2D6A4F',
-        },
-        terracotta: '#C87E5B',
-        gold: '#C8A95B',
-        'sand-light': '#F7F3E9',
-        whatsapp: '#25D366',
-        success: '#008A05',
-        error: '#C13515',
+        // Consolidated colors from index.html (Source of Truth)
+        'forest-green': '#1A3D2E', // Deep Forest Green - Primary
+        'forest-dark': '#0F261C',  // Darker shade for text
+        'gold': '#D4AF37',         // Warm Gold - Accent
+        'gold-light': '#F3E5AB',
+        'cream': '#F5F1E8',        // Soft Cream - Background
+        'mist-blue': '#8BA6A9',    // Secondary
+        'wood': '#6B5B4C',         // Natural Wood
+        'sand-light': '#FAF9F6',
+        'whatsapp': '#25D366',
+
+        // Retaining some existing utility colors if used elsewhere
+        'terracotta': '#C87E5B',
+        'success': '#008A05',
+        'error': '#C13515',
         gray: {
           50: '#F7F7F7',
           100: '#EBEBEB',
@@ -28,44 +32,46 @@ export default {
         },
       },
       fontFamily: {
-        sans: ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
+        sans: ['Inter', 'Noto Sans', 'Noto Sans SC', 'sans-serif'],
+        serif: ['Playfair Display', 'serif'],
+        alt: ['Montserrat', 'Noto Sans', 'sans-serif'],
       },
       boxShadow: {
-        'sm': '0 1px 2px rgba(0,0,0,0.08)',
-        'md': '0 2px 8px rgba(0,0,0,0.12)',
-        'lg': '0 6px 20px rgba(0,0,0,0.15)',
-        'xl': '0 12px 40px rgba(0,0,0,0.18)',
-        'soft': '0 4px 20px rgba(0, 0, 0, 0.08)',
-        'strong': '0 10px 40px rgba(0, 0, 0, 0.15)',
-      },
-      borderRadius: {
-        'sm': '8px',
-        'md': '12px',
-        'lg': '16px',
-      },
-      spacing: {
-        '18': '4.5rem',  // 72px
-        '22': '5.5rem',  // 88px
-      },
-      transitionDuration: {
-        '400': '400ms',
-        '600': '600ms',
+        'soft': '0 4px 20px rgba(0,0,0,0.03)',
+        'card': '0 10px 40px rgba(26, 61, 46, 0.08)',
+        'glow': '0 0 25px rgba(212, 175, 55, 0.2)',
+        'strong': '0 20px 50px rgba(0,0,0,0.15)',
+        'sm': '0 1px 2px rgba(0,0,0,0.08)', // Kept for compatibility
+        'md': '0 2px 8px rgba(0,0,0,0.12)', // Kept for compatibility
       },
       animation: {
-        'slow-zoom': 'slowZoom 20s ease-in-out infinite',
+        'fade-up': 'fadeUp 0.8s ease-out forwards',
+        'scale-slow': 'scaleSlow 20s ease-in-out infinite alternate',
         'pulse-subtle': 'pulseSubtle 3s ease-in-out infinite',
       },
       keyframes: {
-        slowZoom: {
-          '0%, 100%': { transform: 'scale(1)' },
-          '50%': { transform: 'scale(1.1)' },
+        fadeUp: {
+          '0%': { opacity: '0', transform: 'translateY(30px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        scaleSlow: {
+          '0%': { transform: 'scale(1)' },
+          '100%': { transform: 'scale(1.1)' },
         },
         pulseSubtle: {
           '0%, 100%': { opacity: '1' },
           '50%': { opacity: '0.8' },
         },
       },
+      spacing: {
+        '18': '4.5rem',
+        '22': '5.5rem',
+      },
+      borderRadius: {
+        'sm': '8px',
+        'md': '12px',
+        'lg': '16px',
+      }
     },
   },
   plugins: [
