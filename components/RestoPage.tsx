@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Leaf, ChefHat, Clock, MapPin, Phone, ArrowRight } from 'lucide-react';
 import { Language } from '../types';
 import { RESTO_MENU } from '../constants';
+import { FadeIn, Stagger, ScaleIn } from './ui/animations';
 import { SEO } from './SEO';
 import { optimizeImage } from '../utils/imageOptimizer';
 
@@ -63,7 +64,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
         </div>
 
         {/* Content */}
-        <div className="relative z-10 text-center px-6 animate-fade-in-up">
+        <FadeIn className="relative z-10 text-center px-6">
           <div className="inline-block border border-white/40 px-6 py-2 mb-8 backdrop-blur-sm">
             <span className="text-white/90 text-xs font-bold uppercase tracking-[0.3em]">{t('resto.heroLabel')}</span>
           </div>
@@ -73,7 +74,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
           <p className="text-white/90 text-lg md:text-2xl max-w-3xl mx-auto font-light leading-relaxed">
             {t('resto.heroSubtitle')}
           </p>
-        </div>
+        </FadeIn>
 
         {/* Scroll Indicator */}
         <div className="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
@@ -87,7 +88,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1 relative animate-fade-in-left">
+            <FadeIn className="order-2 lg:order-1 relative" direction="left">
               <div className="absolute -bottom-8 -left-8 w-full h-full border border-gold/30 rounded-sm -z-10 hidden md:block"></div>
               <img
                 src={optimizeImage("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1600", 800)}
@@ -97,8 +98,8 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 width="800"
                 height="700"
               />
-            </div>
-            <div className="order-1 lg:order-2 space-y-8 animate-fade-in-right">
+            </FadeIn>
+            <FadeIn className="order-1 lg:order-2 space-y-8" direction="right">
               <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase block">{t('resto.story1Label')}</span>
               <h2 className="font-serif text-4xl md:text-5xl font-light text-gray-900 leading-tight">
                 {t('resto.story1Title')}
@@ -107,7 +108,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
               <p className="text-gray-600 leading-loose text-lg font-light">
                 {t('resto.story1Desc')}
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -116,7 +117,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
       <section className="py-24 md:py-32 bg-gray-50">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="space-y-8 animate-fade-in-left">
+            <FadeIn className="space-y-8" direction="left">
               <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase block">{t('resto.story2Label')}</span>
               <h2 className="font-serif text-4xl md:text-5xl font-light text-gray-900 leading-tight">
                 {t('resto.story2Title')}
@@ -125,8 +126,8 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
               <p className="text-gray-600 leading-loose text-lg font-light">
                 {t('resto.story2Desc')}
               </p>
-            </div>
-            <div className="relative animate-fade-in-right">
+            </FadeIn>
+            <FadeIn className="relative" direction="right">
               <div className="absolute -top-8 -right-8 w-full h-full border border-gold/30 rounded-sm -z-10 hidden md:block"></div>
               <img
                 src={optimizeImage("https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1600", 800)}
@@ -136,7 +137,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 width="800"
                 height="700"
               />
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -145,7 +146,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-            <div className="order-2 lg:order-1 relative animate-fade-in-left">
+            <FadeIn className="order-2 lg:order-1 relative" direction="left">
               <div className="absolute -bottom-8 -left-8 w-full h-full border border-gold/30 rounded-sm -z-10 hidden md:block"></div>
               <img
                 src={optimizeImage("https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1600", 800)}
@@ -155,8 +156,8 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 width="800"
                 height="700"
               />
-            </div>
-            <div className="order-1 lg:order-2 space-y-8 animate-fade-in-right">
+            </FadeIn>
+            <FadeIn className="order-1 lg:order-2 space-y-8" direction="right">
               <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase block">{t('resto.story3Label')}</span>
               <h2 className="font-serif text-4xl md:text-5xl font-light text-gray-900 leading-tight">
                 {t('resto.story3Title')}
@@ -165,7 +166,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
               <p className="text-gray-600 leading-loose text-lg font-light">
                 {t('resto.story3Desc')}
               </p>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -174,15 +175,15 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
       <section className="py-24 md:py-32 bg-gray-50">
         <div className="container mx-auto px-6 md:px-8">
           <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-20 animate-fade-in-up">
+            <FadeIn className="text-center mb-20">
               <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">{t('resto.menuTitle')}</span>
               <h2 className="font-serif text-4xl md:text-5xl font-light text-gray-900 mb-8">Signature Dishes</h2>
               <div className="w-24 h-px bg-gold/60 mx-auto"></div>
-            </div>
+            </FadeIn>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+            <Stagger className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
               {RESTO_MENU.map((item, index) => (
-                <div key={item.id} className="text-center group cursor-pointer animate-fade-in-up" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                <div key={item.id} className="text-center group cursor-pointer" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
                   <div className="mb-8 overflow-hidden rounded-sm shadow-lg">
                     <img
                       src={optimizeImage(item.image, 600)}
@@ -202,10 +203,10 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                   </p>
                 </div>
               ))}
-            </div>
+            </Stagger>
 
             {/* CTA to full menu */}
-            <div className="text-center mt-20 animate-fade-in-up">
+            <FadeIn className="text-center mt-20" delay={0.2}>
               <p className="text-gray-600 text-base italic font-light mb-6">
                 {t('resto.cta.discover')}
               </p>
@@ -218,7 +219,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
                 <span>{t('resto.cta.viewMenu')}</span>
                 <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
               </a>
-            </div>
+            </FadeIn>
           </div>
         </div>
       </section>
@@ -226,7 +227,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
       {/* Values - Farm to Table */}
       <section className="py-24 md:py-32 bg-white">
         <div className="container mx-auto px-6 md:px-8">
-          <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+          <FadeIn className="max-w-4xl mx-auto text-center">
             <div className="flex justify-center gap-12 md:gap-24 mb-16">
               <div className="flex flex-col items-center gap-6 group">
                 <div className="w-20 h-20 flex items-center justify-center border border-gray-100 rounded-full group-hover:border-forest transition-colors duration-300">
@@ -251,7 +252,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
             <p className="text-gray-600 leading-loose text-lg max-w-2xl mx-auto font-light">
               {t('resto.values.desc')}
             </p>
-          </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -305,7 +306,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
 
       {/* Final CTA */}
       <section className="py-24 md:py-32 bg-white">
-        <div className="container mx-auto px-6 text-center animate-fade-in-up">
+        <FadeIn className="container mx-auto px-6 text-center">
           <h2 className="font-serif text-4xl md:text-6xl text-gray-900 mb-8">
             {t('resto.cta.title')}
           </h2>
@@ -321,7 +322,7 @@ const RestoPage: React.FC<RestoPageProps> = ({ lang, onNavigateToActivity, onNav
           >
             {t('resto.cta.button')}
           </a>
-        </div>
+        </FadeIn>
       </section>
     </div>
   );

@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { PageHero } from './components/ui/PageHero';
 import { StickyBookingCTA } from './components/ui/StickyBookingCTA';
 import { Mountain, Heart, Leaf, Users } from 'lucide-react';
+import { FadeIn, Stagger, ScaleIn } from './components/ui/animations';
 import { SEOHead } from './components/ui/SEOHead';
 import { StructuredData } from './components/ui/StructuredData';
 import { trackPageView } from './utils/analytics';
@@ -57,7 +58,7 @@ export function AboutPage() {
             {/* Brand Philosophy - Refined */}
             <section className="py-24 md:py-32">
                 <div className="container mx-auto px-6 md:px-8">
-                    <div className="max-w-4xl mx-auto text-center animate-fade-in-up">
+                    <FadeIn className="max-w-4xl mx-auto text-center">
                         <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">{t('about.philosophyLabel')}</span>
                         <h2 className="font-serif text-4xl md:text-6xl text-gray-900 mb-8 leading-tight">
                             {t('about.philosophyTitle')}
@@ -69,22 +70,22 @@ export function AboutPage() {
                         <p className="text-lg md:text-xl text-gray-600 font-light leading-relaxed">
                             {t('about.philosophyDesc2')}
                         </p>
-                    </div>
+                    </FadeIn>
                 </div>
             </section>
 
             {/* Core Values - Refined */}
             <section className="py-24 md:py-32 bg-gray-50">
                 <div className="container mx-auto px-6 md:px-8">
-                    <div className="text-center mb-20 animate-fade-in-up">
+                    <FadeIn className="text-center mb-20">
                         <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">{t('about.valuesLabel')}</span>
                         <h2 className="font-serif text-4xl md:text-5xl text-gray-900">
                             {t('about.valuesTitle')}
                         </h2>
-                    </div>
+                    </FadeIn>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16">
-                        <div className="text-center group animate-fade-in-up delay-100">
+                    <Stagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-16" staggerDelay={0.1}>
+                        <ScaleIn className="text-center group" scale={0.9}>
                             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-500">
                                 <Mountain size={32} className="text-gray-400 group-hover:text-forest transition-colors duration-300" />
                             </div>
@@ -92,9 +93,9 @@ export function AboutPage() {
                             <p className="text-base text-gray-500 font-light leading-relaxed px-4">
                                 {t('about.valueHeritageDesc')}
                             </p>
-                        </div>
+                        </ScaleIn>
 
-                        <div className="text-center group animate-fade-in-up delay-200">
+                        <ScaleIn className="text-center group" scale={0.9}>
                             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-500">
                                 <Leaf size={32} className="text-gray-400 group-hover:text-forest transition-colors duration-300" />
                             </div>
@@ -102,9 +103,9 @@ export function AboutPage() {
                             <p className="text-base text-gray-500 font-light leading-relaxed px-4">
                                 {t('about.valueSustainabilityDesc')}
                             </p>
-                        </div>
+                        </ScaleIn>
 
-                        <div className="text-center group animate-fade-in-up delay-300">
+                        <ScaleIn className="text-center group" scale={0.9}>
                             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-500">
                                 <Heart size={32} className="text-gray-400 group-hover:text-forest transition-colors duration-300" />
                             </div>
@@ -112,9 +113,9 @@ export function AboutPage() {
                             <p className="text-base text-gray-500 font-light leading-relaxed px-4">
                                 {t('about.valueAuthenticityDesc')}
                             </p>
-                        </div>
+                        </ScaleIn>
 
-                        <div className="text-center group animate-fade-in-up delay-400">
+                        <ScaleIn className="text-center group" scale={0.9}>
                             <div className="w-24 h-24 bg-white rounded-full flex items-center justify-center mx-auto mb-8 shadow-sm group-hover:shadow-xl group-hover:-translate-y-2 transition-all duration-500">
                                 <Users size={32} className="text-gray-400 group-hover:text-forest transition-colors duration-300" />
                             </div>
@@ -122,8 +123,8 @@ export function AboutPage() {
                             <p className="text-base text-gray-500 font-light leading-relaxed px-4">
                                 {t('about.valueCommunityDesc')}
                             </p>
-                        </div>
-                    </div>
+                        </ScaleIn>
+                    </Stagger>
                 </div>
             </section>
 
@@ -131,16 +132,16 @@ export function AboutPage() {
             <section className="py-24 md:py-32 overflow-hidden">
                 <div className="container mx-auto px-6 md:px-8">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-                        <div className="relative animate-fade-in-left">
+                        <FadeIn className="relative" direction="left">
                             <div className="absolute -top-8 -left-8 w-full h-full border border-gold/30 rounded-sm -z-10 hidden md:block"></div>
                             <img
                                 src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1200"
                                 alt="Mount Puntang Heritage"
                                 className="w-full h-[500px] md:h-[700px] object-cover rounded-sm shadow-2xl"
                             />
-                        </div>
+                        </FadeIn>
 
-                        <div className="space-y-8 animate-fade-in-right">
+                        <FadeIn className="space-y-8" direction="right" delay={0.2}>
                             <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase block">{t('about.historyLabel')}</span>
                             <h2 className="font-serif text-4xl md:text-5xl text-gray-900 leading-tight">
                                 {t('about.historyTitle')}
@@ -157,7 +158,7 @@ export function AboutPage() {
                                     {t('about.historyDesc3')}
                                 </p>
                             </div>
-                        </div>
+                        </FadeIn>
                     </div>
                 </div>
             </section>
@@ -196,7 +197,7 @@ export function AboutPage() {
 
             {/* CTA - Refined */}
             <section className="py-24 md:py-32 bg-white">
-                <div className="container mx-auto px-6 text-center animate-fade-in-up">
+                <FadeIn className="container mx-auto px-6 text-center">
                     <h2 className="font-serif text-4xl md:text-6xl text-gray-900 mb-8">
                         {t('about.ctaTitle')}
                     </h2>
@@ -210,7 +211,7 @@ export function AboutPage() {
                     >
                         {t('nav.bookNow')}
                     </button>
-                </div>
+                </FadeIn>
             </section>
 
             <StickyBookingCTA onBookClick={handleBookingClick} />

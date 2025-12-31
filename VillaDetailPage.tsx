@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useCurrency } from './hooks/useCurrency';
 import { Star, Users, Wifi, Coffee, Wind, Mountain, Heart, Share2, Grid3x3, BedDouble, Bath, Check, Clock, Info, Calendar, Tv, Utensils, Snowflake, Waves, Flame, Trees, Sofa, Car, Gamepad2, Flower2, Droplets, ChefHat } from 'lucide-react';
+import { FadeIn, ScaleIn, Stagger } from './components/ui/animations';
 import { ImageGalleryModal } from './components/features/ImageGalleryModal';
 import { BookingCard } from './components/features/BookingCard';
 import { VILLAS } from './constants';
@@ -55,14 +56,16 @@ const FacilityItem: React.FC<{ text: string | any }> = ({ text }) => {
     const Icon = getFacilityIcon(displayText);
 
     return (
-        <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:border-gold/50 hover:shadow-md transition-all duration-300 group">
-            <div className="p-2.5 bg-gray-50 rounded-full text-gray-400 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
-                <Icon size={18} />
+        <ScaleIn scale={0.95} duration={0.4} className="h-full">
+            <div className="flex items-center gap-4 p-4 rounded-xl bg-white border border-gray-100 hover:border-gold/50 hover:shadow-md transition-all duration-300 group h-full">
+                <div className="p-2.5 bg-gray-50 rounded-full text-gray-400 group-hover:bg-gold group-hover:text-white transition-colors duration-300">
+                    <Icon size={18} />
+                </div>
+                <span className="text-sm text-gray-700 font-light leading-relaxed group-hover:text-gray-900 transition-colors">
+                    {displayText}
+                </span>
             </div>
-            <span className="text-sm text-gray-700 font-light leading-relaxed group-hover:text-gray-900 transition-colors">
-                {displayText}
-            </span>
-        </div>
+        </ScaleIn>
     );
 };
 
@@ -190,7 +193,8 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
 
             <div className="container mx-auto px-4 max-w-7xl">
                 {/* Header - Added pt-24 for fixed header clearance on mobile */}
-                <div className="pt-24 md:pt-8 pb-8">
+                {/* Header - Added pt-24 for fixed header clearance on mobile */}
+                <FadeIn className="pt-24 md:pt-8 pb-8" direction="down">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
                         <div>
                             <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wide mb-2">{currentVilla.name}</h1>
@@ -241,7 +245,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                             </div>
                         )}
                     </div>
-                </div>
+                </FadeIn>
 
                 {/* Image Grid - Mobile: Single hero image, Desktop: 1+4 grid */}
                 {/* Mobile Gallery */}
@@ -265,7 +269,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                 </div>
 
                 {/* Desktop Gallery */}
-                <div className="hidden md:grid grid-cols-4 grid-rows-2 gap-1 h-[500px] overflow-hidden mb-12 cursor-pointer rounded-xl">
+                <FadeIn delay={0.2} scale={0.97} duration={0.8} className="hidden md:grid grid-cols-4 grid-rows-2 gap-1 h-[500px] overflow-hidden mb-12 cursor-pointer rounded-xl">
                     <div
                         className="col-span-2 row-span-2 relative group"
                         onClick={() => handleImageClick(0)}
@@ -302,7 +306,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                             )}
                         </div>
                     ))}
-                </div>
+                </FadeIn>
 
                 {/* Main Content + Booking Card */}
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-16">
@@ -310,7 +314,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                     <div className="lg:col-span-2 space-y-12">
 
                         {/* Description */}
-                        <div className="pb-8 border-b border-gray-100">
+                        <FadeIn delay={0.4} className="pb-8 border-b border-gray-100">
                             <h2 className="font-serif text-2xl font-light mb-6">{t('villa.description', 'Description')}</h2>
                             <p className="text-gray-600 leading-loose font-light text-lg mb-6">
                                 {getContent(currentVilla.longDescription) || getContent(currentVilla.description)}
@@ -326,10 +330,10 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                     </div>
                                 </div>
                             )}
-                        </div>
+                        </FadeIn>
 
                         {/* Pricing Details */}
-                        <div className="pb-8 border-b border-gray-100">
+                        <FadeIn delay={0.5} className="pb-8 border-b border-gray-100">
                             <h2 className="font-serif text-2xl font-light mb-6 flex items-center gap-3">
                                 <Calendar className="text-forest-dark" size={24} />
                                 {t('villa.pricingDetails', 'Pricing Details')}
@@ -357,7 +361,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                     <p>{t('villa.taxNote', 'Price excludes 10% tax and service charge. Prices subject to change.')}</p>
                                 </div>
                             </div>
-                        </div>
+                        </FadeIn>
 
                         {/* Sleeping Arrangements */}
                         {currentVilla.bedConfiguration && (
@@ -388,11 +392,11 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                                 <Sofa size={16} />
                                                 {t('villa.roomFacilities', 'Room Facilities')}
                                             </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.05}>
                                                 {currentVilla.facilities.room.map((item, idx) => (
                                                     <FacilityItem key={idx} text={item} />
                                                 ))}
-                                            </div>
+                                            </Stagger>
                                         </div>
                                     )}
                                     {currentVilla.facilities.natural && (
@@ -401,11 +405,11 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                                 <Trees size={16} />
                                                 {t('villa.naturalFeatures', 'Natural Features')}
                                             </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.05}>
                                                 {currentVilla.facilities.natural.map((item, idx) => (
                                                     <FacilityItem key={idx} text={item} />
                                                 ))}
-                                            </div>
+                                            </Stagger>
                                         </div>
                                     )}
                                     {currentVilla.facilities.meals && (
@@ -414,11 +418,11 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                                 <Utensils size={16} />
                                                 {t('villa.dining', 'Dining')}
                                             </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.05}>
                                                 {currentVilla.facilities.meals.map((item, idx) => (
                                                     <FacilityItem key={idx} text={item} />
                                                 ))}
-                                            </div>
+                                            </Stagger>
                                         </div>
                                     )}
                                     {currentVilla.facilities.amenities && (
@@ -427,11 +431,11 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                                 <Wifi size={16} />
                                                 {t('villa.amenities', 'Amenities')}
                                             </h3>
-                                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                            <Stagger className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.05}>
                                                 {currentVilla.facilities.amenities.map((item, idx) => (
                                                     <FacilityItem key={idx} text={item} />
                                                 ))}
-                                            </div>
+                                            </Stagger>
                                         </div>
                                     )}
                                 </div>
@@ -480,7 +484,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
 
                     {/* Right Column - Booking Card */}
                     <div className="lg:col-span-1">
-                        <div className="sticky top-24">
+                        <FadeIn delay={0.6} className="sticky top-24">
                             <BookingCard
                                 price={currentVilla.priceWeekday || currentVilla.price}
                                 rating={4.9}
@@ -491,7 +495,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                             <p className="text-center text-xs text-gray-400 mt-4">
                                 *{t('villa.taxNoteShort', 'Harga belum termasuk pajak 10%')}
                             </p>
-                        </div>
+                        </FadeIn>
                     </div>
                 </div>
             </div>
