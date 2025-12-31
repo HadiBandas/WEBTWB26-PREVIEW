@@ -219,19 +219,8 @@ function App() {
         className={`fixed inset-0 z-40 bg-forest-dark text-white pt-24 transition-transform duration-500 lg:hidden overflow-y-auto ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}
         style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 24px), 24px)' }}
       >
-        <nav className="flex flex-col gap-4 text-2xl font-serif font-bold px-6">
-          <button onClick={() => { navigate('home'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.home')}</button>
-          <button onClick={() => { navigate('villas'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.villas')}</button>
-          <button onClick={() => { navigate('resto'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.resto')}</button>
-          <button onClick={() => { navigate('facility'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.facility')}</button>
-          <button onClick={() => { navigate('gallery'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.gallery')}</button>
-          <button onClick={() => { navigate('offers'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.offers')}</button>
-          <button onClick={() => { navigate('membership'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.membership')}</button>
-          <button onClick={() => { navigate('about'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.about')}</button>
-        </nav>
-
-        {/* Mobile Language Switcher */}
-        <div className="mt-8 border-t border-white/20 pt-6">
+        {/* Mobile Language Switcher at Top */}
+        <div className="px-6 pb-6 border-b border-white/10 mb-6">
           <p className="text-white/60 text-[10px] uppercase tracking-[0.2em] mb-4 font-medium">Select Language</p>
           <div className="flex gap-3">
             {['id', 'en', 'zh', 'de'].map((langCode) => {
@@ -267,7 +256,18 @@ function App() {
           </div>
         </div>
 
-        <div className="mt-6 pt-6">
+        <nav className="flex flex-col gap-4 text-2xl font-serif font-bold px-6">
+          <button onClick={() => { navigate('home'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.home')}</button>
+          <button onClick={() => { navigate('villas'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.villas')}</button>
+          <button onClick={() => { navigate('resto'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.resto')}</button>
+          <button onClick={() => { navigate('facility'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.facility')}</button>
+          <button onClick={() => { navigate('gallery'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.gallery')}</button>
+          <button onClick={() => { navigate('offers'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.offers')}</button>
+          <button onClick={() => { navigate('membership'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.membership')}</button>
+          <button onClick={() => { navigate('about'); setIsMobileMenuOpen(false); }} className="text-left hover:text-gold transition-colors py-2">{t('nav.about')}</button>
+        </nav>
+
+        <div className="mt-6 pt-6 px-6">
           <button
             onClick={() => { scrollToBooking(); setIsMobileMenuOpen(false); }}
             className="w-full bg-gold text-forest-dark py-4 font-bold uppercase tracking-widest text-sm hover:bg-white transition-colors rounded-sm"
