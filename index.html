@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <!-- Basic Meta Tags -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+  <title>Taman Wisata Bougenville | Luxury Mountain Resort in Bandung</title>
+  <meta name="description"
+    content="Experience luxury in nature at Taman Wisata Bougenville. Exclusive villas, organic farm-to-table dining, and pristine nature experiences in Mount Puntang, Bandung - just 2 hours from Jakarta." />
+  <meta name="keywords"
+    content="villa bandung, resort gunung puntang, luxury glamping bandung, family gathering bandung, honeymoon villa west java, wisata alam bandung, taman wisata bougenville" />
+  <meta name="author" content="Taman Wisata Bougenville" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Taman Wisata Bougenville | Luxury Mountain Resort" />
+  <meta property="og:description"
+    content="Experience luxury in nature. Exclusive villas, organic dining, and pristine nature in Mount Puntang, Bandung." />
+  <meta property="og:image" content="https://tamanwisatabougenville.com/images/og-image.jpg" />
+  <meta property="og:url" content="https://tamanwisatabougenville.com" />
+  <meta property="og:site_name" content="Taman Wisata Bougenville" />
+  <meta property="og:locale" content="id_ID" />
+  <meta property="og:locale:alternate" content="en_US" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Taman Wisata Bougenville | Luxury Mountain Resort" />
+  <meta name="twitter:description" content="Experience luxury in nature. Exclusive villas in Mount Puntang, Bandung." />
+  <meta name="twitter:image" content="https://tamanwisatabougenville.com/images/og-image.jpg" />
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=%VITE_GA4_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    // Check if GA4 ID is available
+    const ga4Id = '%VITE_GA4_ID%';
+    if (ga4Id && ga4Id !== '' && !ga4Id.startsWith('%')) {
+      gtag('config', ga4Id, {
+        'send_page_view': true,
+        'anonymize_ip': true
+      });
+    }
+  </script>
+
+  <!-- Facebook Pixel (Optional) -->
+  <script>
+    const fbPixelId = '%VITE_FB_PIXEL_ID%';
+    if (fbPixelId && fbPixelId !== '' && !fbPixelId.startsWith('%')) {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ?
+            n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', fbPixelId);
+      fbq('track', 'PageView');
+    }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&family=Noto+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'forest-green': '#1A3D2E', // Deep Forest Green - Primary
+            'forest-dark': '#0F261C',  // Darker shade for text
+            'gold': '#D4AF37',         // Warm Gold - Accent
+            'gold-light': '#F3E5AB',
+            'cream': '#F5F1E8',        // Soft Cream - Background
+            'mist-blue': '#8BA6A9',    // Secondary
+            'wood': '#6B5B4C',         // Natural Wood
+            'sand-light': '#FAF9F6',
+            'whatsapp': '#25D366',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans', 'Noto Sans SC', 'sans-serif'],
+            serif: ['Playfair Display', 'serif'],
+            alt: ['Montserrat', 'Noto Sans', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft': '0 4px 20px rgba(0,0,0,0.03)',
+            'card': '0 10px 40px rgba(26, 61, 46, 0.08)',
+            'glow': '0 0 25px rgba(212, 175, 55, 0.2)',
+            'strong': '0 20px 50px rgba(0,0,0,0.15)',
+          },
+          animation: {
+            'fade-up': 'fadeUp 0.8s ease-out forwards',
+            'scale-slow': 'scaleSlow 20s ease-in-out infinite alternate',
+          },
+          keyframes: {
+            fadeUp: {
+              '0%': { opacity: '0', transform: 'translateY(30px)' },
+              '100%': { opacity: '1', transform: 'translateY(0)' },
+            },
+            scaleSlow: {
+              '0%': { transform: 'scale(1)' },
+              '100%': { transform: 'scale(1.1)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #F5F1E8;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #D4AF37;
+      border-radius: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #1A3D2E;
+    }
+
+    .hide-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .hide-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    html {
+      scroll-padding-top: 100px;
+    }
+
+    .text-shadow {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .text-shadow-lg {
+      text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Mobile First Optimization */
+    input,
+    select,
+    button,
+    textarea {
+      min-height: 48px;
+      touch-action: manipulation;
+    }
+
+    /* Ensure date inputs use native picker on mobile */
+    input[type="date"] {
+      -webkit-appearance: none;
+      appearance: none;
+      min-height: 48px;
+    }
+  </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+  <meta name="theme-color" content="#1A3D2E">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="/manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+  </script>
+</head>
+
+<body class="bg-cream text-forest-dark antialiased">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
+</html>

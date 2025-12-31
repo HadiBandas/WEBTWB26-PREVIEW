@@ -1,0 +1,323 @@
+{
+    "nav": {
+        "home": "主页",
+        "villas": "别墅",
+        "resto": "餐饮",
+        "facility": "设施",
+        "gallery": "画廊",
+        "offers": "优惠",
+        "membership": "会员",
+        "about": "关于",
+        "contact": "联系",
+        "location": "位置",
+        "faq": "常见问题",
+        "blog": "博客",
+        "bookNow": "立即预订"
+    },
+    "home": {
+        "hero": {
+            "headline": "专属山林度假胜地",
+            "subheadline": "距离雅加达仅两小时,在纯正奢华中寻找宁静",
+            "cta": "立即预订",
+            "trust": "自 2005 年 · 12 栋专属别墅",
+            "scroll": "滚动"
+        },
+        "whatsapp": {
+            "inquiry": "您好，我想预订别墅"
+        },
+        "seo": {
+            "title": "Taman Wisata Bougenville | 万隆豪华山顶度假村",
+            "description": "在 Taman Wisata Bougenville 体验大自然中的奢华。独家私人别墅，从农场到餐桌的有机餐饮，以及万隆 Puntang 山的原始自然体验。",
+            "keywords": "万隆别墅, puntang 山度假村, 万隆豪华露营, 万隆家庭聚会, 西爪哇蜜月别墅"
+        },
+        "location": "班达楠泰山,万隆",
+        "welcomeTitle": "欢迎来到布根维尔旅游公园",
+        "welcomeDesc": "在泰山的大自然怀抱中寻找宁静。我们的专属别墅旨在提供难忘的度假体验,距离雅加达仅2小时车程。",
+        "featuredVillasLabel": "住宿",
+        "featuredVillasTitle": "精选别墅",
+        "viewAllVillas": "查看所有别墅",
+        "experiencesTitle": "让每一刻都成为冒险",
+        "fromPrice": "起价",
+        "viewDetails": "查看详情",
+        "guestLabel": "{{count}} 位客人",
+        "mountainView": "山景"
+    },
+    "experiences": {
+        "nature": "自然探索",
+        "natureDesc": "探索古老的松树林",
+        "picnic": "家庭野餐",
+        "picnicDesc": "创造持久的回忆",
+        "waterfall": "瀑布徒步",
+        "waterfallDesc": "冒险等待着您",
+        "stargazing": "观星",
+        "stargazingDesc": "在万千星空下"
+    },
+    "footer": {
+        "tagline": "扎根于纳加拉泰山遗产的豪华山地圣地。以最纯粹的形式重新连接大自然。",
+        "exploreTitle": "探索",
+        "infoTitle": "信息",
+        "contactTitle": "联系方式",
+        "newsletterTitle": "通讯订阅",
+        "newsletterPlaceholder": "电子邮箱地址",
+        "subscribe": "订阅",
+        "copyright": "© 2024 布根维尔旅游公园。版权所有。",
+        "privacyPolicy": "隐私政策",
+        "termsOfService": "服务条款"
+    },
+    "trust": {
+        "reviews": "5星级评价",
+        "guests": "快乐的客人",
+        "featured": "精选于",
+        "media": "KOMPAS · DETIK"
+    },
+    "villa": {
+        "amenities": "设施",
+        "description": "描述",
+        "availability": "可用性",
+        "capacity": "容量",
+        "bedrooms": "卧室",
+        "bathrooms": "浴室",
+        "checkAvailability": "查看可用性",
+        "bookThisVilla": "预订此别墅",
+        "weekdayPrice": "工作日价格",
+        "weekendPrice": "周末价格",
+        "notFound": "未找到别墅",
+        "notFoundDesc": "您查找的别墅不存在。",
+        "pricingDetails": "价格详情",
+        "weekday": "工作日",
+        "weekdayDays": "周一 - 周四",
+        "weekend": "周末",
+        "weekendDays": "周五 - 周六",
+        "highSeason": "旺季",
+        "highSeasonDays": "节假日",
+        "taxNote": "价格不含10%税费和服务费。价格可能会有变动。",
+        "taxNoteShort": "价格不含10%税费",
+        "sleepingArrangements": "睡眠安排",
+        "room": "房间",
+        "facilities": "别墅设施",
+        "roomFacilities": "房间设施",
+        "naturalFeatures": "自然特色",
+        "dining": "餐饮",
+        "houseRules": "入住须知",
+        "checkIn": "入住",
+        "checkOut": "退房",
+        "smoking": "吸烟",
+        "noSmoking": "房间内禁止吸烟",
+        "importantNotes": "重要提示",
+        "showAllPhotos": "查看所有照片",
+        "area": "别墅面积"
+    },
+    "booking": {
+        "title": "您的预订",
+        "checkIn": "入住",
+        "checkOut": "退房",
+        "guests": "客人",
+        "selectVilla": "选择别墅",
+        "submit": "提交请求",
+        "whatsappBooking": "通过WhatsApp预订",
+        "noCharge": "暂不收费",
+        "serviceFee": "服务费",
+        "cleaningFee": "清洁费",
+        "included": "已包含"
+    },
+    "about": {
+        "title": "关于我们",
+        "subtitle": "自然遗产与奢华的完美融合",
+        "story": "我们的故事",
+        "ctaTitle": "开始您的旅程",
+        "ctaDesc": "我们邀请您成为我们故事的一部分。立即预订您的住宿。",
+        "stats": {
+            "zero": "零",
+            "local": "本地"
+        },
+        "mission": "我们的使命",
+        "values": "我们的价值观",
+        "philosophyLabel": "我们的理念",
+        "philosophyTitle": "回归真正的自然",
+        "philosophyDesc1": "在现代生活的喧嚣中，Taman Wisata Bougenville 是距离雅加达仅2小时车程的专属避世胜地。我们相信真正的奢华不是人造的宏伟，而是与自然的亲密相处、珍贵的宁静以及与挚爱亲人共度的美好时光。",
+        "philosophyDesc2": "Bougenville的每一个角落都旨在让您更接近自然、家人和自我。在Puntang山脚下的古老松林中发现真正的奢华。",
+        "valuesLabel": "我们的价值观",
+        "valuesTitle": "我们的价值观",
+        "valueHeritageTitle": "传承",
+        "valueHeritageDesc": "通过尊重自然的建筑和真诚的巽他式热情好客，传承纳加拉Puntang王国的精神。",
+        "valueSustainabilityTitle": "可持续发展",
+        "valueSustainabilityDesc": "采用我们自己花园的有机食材的农场到餐桌理念。我们致力于环保实践。",
+        "valueAuthenticityTitle": "真实性",
+        "valueAuthenticityDesc": "真诚的体验，没有矫饰。从员工的热情欢迎到实心柚木内饰的每一个细节。",
+        "valueCommunityTitle": "社区",
+        "valueCommunityDesc": "通过酒店培训和与周边农民的合作，赋能当地社区。",
+        "historyLabel": "历史与传统",
+        "historyTitle": "纳加拉Puntang的遗产",
+        "historyDesc1": "几个世纪前，\"纳加拉Puntang\"王国曾在这片土地上巍然屹立。这是一个以与自然和谐共处和对山区资源的明智管理而闻名的王国。",
+        "historyDesc2": "我们通过尊重自然的建筑和真诚的巽他式热情好客来保持这种精神。每栋别墅都秉承\"与自然融合而不改变它\"的理念设计——这是我们的祖先几百年来一直践行的理念。",
+        "historyDesc3": "Puntang山不仅仅是一个地方。它是历史的见证者，传统的守护者，也是世世代代全心呵护这片古老松林的人们的家园。",
+        "responsibilityLabel": "我们的责任",
+        "responsibilityTitle": "我们对自然的承诺",
+        "responsibilityDesc": "作为一个位于山区腹地的度假村，我们有责任保护支撑这份美丽的生态系统。Bougenville秉持\"不留痕迹\"原则，并将30%的土地用于森林保护。",
+        "statRenewable": "可再生能源",
+        "statWaste": "废物政策",
+        "statCommunity": "社区优先"
+    },
+    "contact": {
+        "title": "联系我们",
+        "subtitle": "我们随时为您服务",
+        "name": "姓名",
+        "email": "电子邮件",
+        "phone": "电话",
+        "message": "留言",
+        "send": "发送消息",
+        "address": "西爪哇万隆泰山路",
+        "openHours": "周一至周日:上午8:00 - 晚上8:00"
+    },
+    "faq": {
+        "title": "常见问题",
+        "subtitle": "您需要了解的一切"
+    },
+    "offers": {
+        "title": "特别优惠",
+        "subtitle": "以超值价格体验最佳服务",
+        "validUntil": "有效期至",
+        "bookOffer": "预订此优惠"
+    },
+    "resto": {
+        "title": "餐饮与活动",
+        "subtitle": "品尝正宗巽他美食",
+        "menuTitle": "招牌菜单",
+        "functionTitle": "活动空间",
+        "heroLabel": "农场到餐桌体验",
+        "heroTitle": "餐饮与活动",
+        "heroSubtitle": "Bale Puntang — 山峦与烹饪卓越的交汇处",
+        "story1Label": "氛围",
+        "story1Title": "在清澈的 Cigeureuh 河畔",
+        "story1Desc": "Bale Puntang 将经典木质内饰的温暖与 Puntang 山的凉爽自然融为一体。您可以选择在复古屋顶下的室内享受舒适氛围，或在户外区域呼吸新鲜空气，聆听潺潺流水声。",
+        "story2Label": "风味哲学",
+        "story2Title": "现代手法诠释正宗风味",
+        "story2Desc": "每一道菜——从招牌菜单到辛辣刺激的参巴酱——都由精选的当地食材制成。我们以现代的呈现方式突显正宗风味，在每一盘中讲述丰富的巽他烹饪传统。",
+        "story3Label": "场地与活动",
+        "story3Title": "不仅仅是餐厅",
+        "story3Desc": "Bale Puntang 随时准备成为聚会、会议、社交活动或具有独特风格的小型派对的场所。坐在古董木长凳上，在聊天和创造难忘时刻的同时感受大自然的宁静。",
+        "values": {
+            "organic": "有机",
+            "artisan": "工匠",
+            "local": "本地",
+            "title": "源头新鲜",
+            "desc": "我们相信最好的味道来自大自然本身。我们的蔬菜直接从我们自己的花园采摘，香料来自当地的 Puntang 农民。"
+        },
+        "reservation": {
+            "hoursTitle": "营业时间",
+            "day": "周一至周日",
+            "reservationTitle": "预订",
+            "locationTitle": "位置"
+        },
+        "cta": {
+            "title": "预订您的餐桌",
+            "subtitle": "建议日落晚餐和特殊场合提前预订",
+            "button": "立即预订",
+            "viewMenu": "查看完整菜单",
+            "discover": "发现山地餐饮的魔力。"
+        }
+    },
+    "facility": {
+        "title": "设施与体验",
+        "subtitle": "发现大自然中的各种精彩活动",
+        "experience": "体验",
+        "map": {
+            "title": "探索地图",
+            "desc": "我们的度假村占地超过 5 公顷，拥有郁郁葱葱的景观。请访问我们的前台获取导游地图或探险建议。",
+            "button": "下载度假村地图"
+        },
+        "nav": {
+            "next": "下一步",
+            "gallery": "查看我们的画廊"
+        },
+        "outdoorTitle": "户外活动",
+        "indoorTitle": "室内设施"
+    },
+    "gallery": {
+        "title": "画廊",
+        "subtitle": "探索布根维尔旅游公园的美丽",
+        "categories": {
+            "all": "全部",
+            "villas": "别墅",
+            "nature": "自然",
+            "facilities": "设施",
+            "events": "活动"
+        }
+    },
+    "location": {
+        "title": "我们的位置",
+        "subtitle": "位于泰山中心,距离雅加达仅2小时车程。体验大自然的宁静。",
+        "directions": "路线指引",
+        "fromJakarta": "从雅加达",
+        "fromBandung": "从万隆"
+    },
+    "blog": {
+        "title": "博客与新闻",
+        "subtitle": "故事、技巧和灵感",
+        "readMore": "阅读更多",
+        "recentPosts": "最新文章"
+    },
+    "membership": {
+        "heroLabel": "私人通道",
+        "heroTitle": "Bougenville Circle",
+        "heroSubtitle": "一个为欣赏自然宁静和真正奢华的人士打造的独家圈子。",
+        "invitationTitle": "尊贵邀请",
+        "invitationDesc": "Bougenville Circle 不仅仅是一个会员资格，它是通往 Taman Wisata Bougenville 个性化体验的钥匙。我们邀请您成为我们故事的一部分。",
+        "privilege1Title": "优先使用权",
+        "privilege1Desc": "第一时间获知热门日期的别墅空房情况和私人活动邀请。",
+        "privilege2Title": "特别优惠",
+        "privilege2Desc": "享受住宿优惠价格和抵达时的特别礼遇。",
+        "privilege3Title": "个性化服务",
+        "privilege3Desc": "我们的礼宾团队将识别您的偏好，确保您的每次访问都有回家的感觉。",
+        "joinNow": "申请加入",
+        "ctaTitle": "加入 Bougenville Circle",
+        "ctaDesc": "成为我们家庭的一员，开启您在大自然中的奢华之旅。",
+        "contactUs": "联系我们",
+        "collectionLabel": "私人收藏系列",
+        "formTitle": "入会申请",
+        "formHeading": "申请加入",
+        "formSubtitle": "加入自然爱好者的社区。本季名额有限。",
+        "submit": "提交申请",
+        "city": "城市 / 居住地",
+        "villaPreference": "首选别墅",
+        "occasion": "访问目的",
+        "placeholders": {
+            "name": "输入您的姓名",
+            "email": "email@example.com",
+            "phone": "+62",
+            "city": "例如：雅加达、万隆、新加坡"
+        },
+        "occasionOptions": {
+            "family": "家庭度假",
+            "honeymoon": "蜜月 / 伴侣",
+            "corporate": "企业活动",
+            "wellness": "健康静修",
+            "other": "其他"
+        }
+    },
+    "seo": {
+        "homeTitle": "布根维尔旅游公园 | 专属山林度假胜地",
+        "homeDescription": "在布根维尔旅游公园体验大自然的宁静。豪华别墅、正宗巽他美食和泰山户外探险。",
+        "villasTitle": "豪华别墅 - 布根维尔旅游公园",
+        "villasDescription": "从我们的专属别墅系列中选择,配有私人泳池、山景和高端设施。",
+        "restoTitle": "餐饮与活动 - 布根维尔旅游公园",
+        "restoDescription": "享受正宗巽他美食,在我们的宴会厅举办您的特别活动。",
+        "facilityTitle": "设施与体验 - 布根维尔旅游公园",
+        "facilityDescription": "探索各种户外和室内活动,享受完美的度假体验。"
+    },
+    "common": {
+        "learnMore": "了解更多",
+        "close": "关闭",
+        "previous": "上一个",
+        "next": "下一个",
+        "loading": "加载中...",
+        "error": "发生错误",
+        "tryAgain": "重试",
+        "success": "成功!",
+        "required": "必填",
+        "save": "保存",
+        "share": "分享",
+        "perNight": "/ 晚",
+        "reviews": "评价"
+    }
+}
