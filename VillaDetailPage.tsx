@@ -189,8 +189,8 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
             />
 
             <div className="container mx-auto px-4 max-w-7xl">
-                {/* Header */}
-                <div className="py-8">
+                {/* Header - Added pt-24 for fixed header clearance on mobile */}
+                <div className="pt-24 md:pt-8 pb-8">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
                         <div>
                             <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wide mb-2">{currentVilla.name}</h1>
