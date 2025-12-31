@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu } from 'lucide-react';
 import { MobileMenu } from '../layout/MobileMenu';
 import { Button } from '../ui/Button';
+import { Logo } from '../ui/Logo';
 import { LanguageSwitcher } from '../features/LanguageSwitcher';
 
 export function Header() {
@@ -51,7 +52,7 @@ export function Header() {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ type: 'spring', stiffness: 300 }}
             >
-                <span className="font-serif text-xl font-bold text-forest-dark">Taman Wisata Bougenville</span>
+                <Logo className="h-14 w-auto" />
                 <nav className="hidden md:flex gap-6 items-center">
                     <Button variant="ghost" size="sm" onClick={() => handleNavigate('villas')}>Villas</Button>
                     <Button variant="ghost" size="sm" onClick={() => handleNavigate('resto')}>Dining</Button>

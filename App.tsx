@@ -1,17 +1,17 @@
-
-
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useRoute } from './hooks/useRouter';
 import {
   Menu, X, MapPin, Star,
-  ArrowRight, Mountain,
+  ArrowRight, Mountain, Globe,
   MessageCircle, Search, Calendar, CheckCircle
 } from 'lucide-react';
 import { Language } from './types';
 import { TRANSLATIONS, VILLAS, REVIEWS, EXPERIENCES } from './constants';
 import BookingForm from './components/BookingForm';
 import { LanguageSwitcher } from './components/ui/LanguageSwitcher';
+import { Logo } from './components/ui/Logo';
+import { Loading } from './components/ui/Loading';
 import { HomePage } from './HomePage';
 import { Footer } from './components/ui/Footer';
 
@@ -37,6 +37,7 @@ function App() {
   const { view, navigate, params, lang } = useRoute('home');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [selectedBookingVilla, setSelectedBookingVilla] = useState('');
   const [selectedBookingPackage, setSelectedBookingPackage] = useState('');
 
@@ -159,12 +160,10 @@ function App() {
 
           {/* Logo */}
           <div className="flex items-center gap-3 cursor-pointer group" onClick={() => handleNavClick('home')}>
-            <div className={`w-10 h-10 border flex items-center justify-center rounded-sm transition-colors ${isScrolled || view !== 'home' ? 'border-forest-dark text-forest-dark' : 'border-white text-white'}`}>
-              <Mountain size={20} />
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-serif font-bold text-lg tracking-wide uppercase ${isScrolled || view !== 'home' ? 'text-forest-dark' : 'text-white'}`}>Taman Wisata Bougenville</span>
-            </div>
+            <Logo
+              className="h-16 w-auto"
+              variant={isScrolled || view !== 'home' ? 'default' : 'white'}
+            />
           </div>
 
           {/* Desktop Nav */}
@@ -221,9 +220,21 @@ function App() {
         style={{ paddingBottom: 'max(env(safe-area-inset-bottom, 24px), 24px)' }}
       >
         {/* Mobile Language Switcher at Top */}
-        <div className="px-6 pb-6 border-b border-white/10 mb-6">
-          <p className="text-white/60 text-[10px] uppercase tracking-[0.2em] mb-4 font-medium">Select Language</p>
-          <div className="flex gap-3">
+        <div className="px-6 pb-6 border-b border-white/10 mb-6 mt-6">
+          <button
+            onClick={() => setIsLangMenuOpen(!isLangMenuOpen)}
+            className="w-full flex items-center justify-between mb-2 group py-2"
+          >
+            <div className="flex items-center gap-2">
+              <Globe size={16} className="text-white/60 group-hover:text-gold transition-colors" />
+              <p className="text-white/60 text-[10px] uppercase tracking-[0.2em] font-medium group-hover:text-gold transition-colors">Select Language</p>
+            </div>
+            <div className={`transition-transform duration-300 ${isLangMenuOpen ? 'rotate-180' : ''}`}>
+              <div className="text-white/40 group-hover:text-gold">▼</div>
+            </div>
+          </button>
+
+          <div className={`grid grid-cols-2 gap-3 overflow-hidden transition-all duration-300 ease-in-out ${isLangMenuOpen ? 'max-h-48 opacity-100 mt-4' : 'max-h-0 opacity-0'}`}>
             {['id', 'en', 'zh', 'de'].map((langCode) => {
               const labels: Record<string, { code: string; name: string }> = {
                 id: { code: 'ID', name: 'Bahasa' },
@@ -239,16 +250,17 @@ function App() {
                   onClick={() => {
                     i18n.changeLanguage(langCode);
                     setIsMobileMenuOpen(false);
+                    // Keep language menu open or close it? User implied "click first then select", so closing main menu is fine.
                   }}
-                  className={`flex flex-col items-center px-4 py-3 rounded-sm transition-all ${isActive
-                    ? 'bg-gold/10 border border-gold/40'
-                    : 'bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20'
+                  className={`flex items-center justify-between px-4 py-3 rounded-md transition-all border ${isActive
+                    ? 'bg-gold/10 border-gold'
+                    : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
                     }`}
                 >
                   <span className={`text-sm font-bold tracking-wide ${isActive ? 'text-gold' : 'text-white'}`}>
                     {labels[langCode].code}
                   </span>
-                  <span className={`text-[10px] mt-0.5 ${isActive ? 'text-gold/70' : 'text-white/50'}`}>
+                  <span className={`text-xs ${isActive ? 'text-gold/80' : 'text-white/40'}`}>
                     {labels[langCode].name}
                   </span>
                 </button>
@@ -280,16 +292,7 @@ function App() {
 
       {/* --- CONTENT RENDER --- */}
       <main className="min-h-screen">
-        <React.Suspense fallback={
-          <div className="min-h-screen flex items-center justify-center bg-cream">
-            <div className="animate-pulse flex flex-col items-center">
-              <Mountain size={48} className="text-gold mb-4" />
-              <div className="h-2 w-32 bg-gold/20 rounded-full overflow-hidden">
-                <div className="h-full bg-gold w-1/2 animate-[shimmer_1s_infinite]"></div>
-              </div>
-            </div>
-          </div>
-        }>
+        <React.Suspense fallback={<Loading />}>
           {renderContent()}
         </React.Suspense>
       </main>

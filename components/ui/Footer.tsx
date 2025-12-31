@@ -2,6 +2,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Mountain, Facebook, Instagram, Youtube, Twitter, Mail, Phone, MapPin, ArrowRight } from 'lucide-react';
+import { Logo } from './Logo';
 
 interface FooterProps {
     navigate: (page: string) => void;
@@ -15,14 +16,10 @@ export function Footer({ navigate }: FooterProps) {
         <footer className="bg-forest-dark text-white/80 pt-24 pb-12 border-t border-white/10">
             <div className="container mx-auto px-6 md:px-8">
 
-                {/* Top Section: Brand & Newsletter */}
                 <div className="flex flex-col lg:flex-row justify-between gap-16 mb-20">
                     <div className="max-w-md">
-                        <div className="flex items-center gap-3 mb-6 text-gold">
-                            <Mountain size={40} strokeWidth={1.5} />
-                            <div className="flex flex-col">
-                                <span className="font-serif font-bold text-xl tracking-wide uppercase text-white">Taman Wisata Bougenville</span>
-                            </div>
+                        <div className="flex items-center gap-3 mb-6">
+                            <Logo variant="white" className="h-20 w-auto" />
                         </div>
                         <p className="text-white/60 text-lg font-light leading-relaxed mb-8">
                             {t('footer.tagline')}
