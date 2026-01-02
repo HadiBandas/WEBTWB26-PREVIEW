@@ -5,7 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
     "./hooks/**/*.{js,ts,jsx,tsx}",
-    "./cms/**/*.{js,ts,jsx,tsx}",
+    "./cms/src/**/*.{js,ts,jsx,tsx}",
     "./utils/**/*.{js,ts,jsx,tsx}",
     "./*.{js,ts,jsx,tsx}",
   ],
@@ -80,6 +80,6 @@ export default {
     },
   },
   plugins: [
-    require('@tailwindcss/line-clamp'),
+
   ],
 };

@@ -72,7 +72,7 @@ export function HomePage() {
 
             {/* Hero Section */}
             <VideoHero
-                fallbackImage={optimizeImage("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070", 1920)}
+                fallbackImage={optimizeImage("/images/home-page-hero.webp", 1920)}
                 headline={t('home.hero.headline')}
                 subheadline={t('home.hero.subheadline')}
                 ctaText={t('home.hero.cta')}

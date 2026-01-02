@@ -109,7 +109,7 @@ export const FOREST_HOUSE_VILLAS: Villa[] = [
     category: 'luxury',
     badge: 'Most Exclusive',
     features: ['Private Waterfall', 'Garden & Pond', 'Gazebo', 'Full Board Meals', 'Premium Service'],
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=1600',
+    image: '/images/fh-hero.webp',
     bedConfiguration: [
       { room: 1, beds: '1 king bed (180x200 cm)' },
       { room: 2, beds: '1 king bed (180x200 cm)' },
@@ -189,7 +189,7 @@ export const MOOI_LAKE_VILLAS: Villa[] = [
     category: 'luxury',
     badge: 'Lakeside Living',
     features: ['Private Lake & Boat', 'Full Board Meals', 'Lakeside Terrace'],
-    image: 'https://images.unsplash.com/photo-1505577058444-a3dab90d8780?q=80&w=1600',
+    image: '/images/mlh-hero.webp',
     bedConfiguration: [
       { room: 1, beds: '1 Master bedroom (king bed)' },
       { room: 2, beds: 'Kids bedroom 1 (3 single bed)' },
@@ -265,7 +265,7 @@ export const DANDENONG_VILLAS: Villa[] = [
     priceHighSeason: 11000000,
     category: 'luxury',
     features: ['American Farmhouse', 'Mountain View', 'Balcony'],
-    image: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?q=80&w=1600',
+    image: '/images/emerald-atas-hero.webp',
     bedConfiguration: [
       { room: 1, beds: '1 tempat tidur King (180 x 200 cm) dan 1 tempat tidur Single (90 x 200 cm)' },
       { room: 2, beds: '2 tempat tidur Queen (160 x 200 cm) masing-masing' }
