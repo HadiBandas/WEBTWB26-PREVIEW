@@ -249,7 +249,11 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                     <div className="grid grid-cols-2 md:flex md:items-center gap-2 md:gap-4 text-sm text-gray-500 mt-3 md:mt-0">
                         <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
                             <Users size={16} className="text-forest-green md:w-[18px] md:h-[18px]" />
-                            <span className="font-medium text-gray-700">{currentVilla.capacity}</span>
+                            <span className="font-medium text-gray-700">{
+                                currentVilla.capacity.toLowerCase().includes('orang')
+                                    ? currentVilla.capacity.replace(/orang/i, t('villa.pax', 'Pax'))
+                                    : currentVilla.capacity
+                            }</span>
                         </div>
                         <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
                             <BedDouble size={16} className="text-forest-green md:w-[18px] md:h-[18px]" />
@@ -409,7 +413,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                     </div>
                                     <div>
                                         <p className="text-xs uppercase tracking-widest text-gray-500 mb-2">{t('villa.weekend', 'Weekend')}</p>
-                                        <p className="text-xs text-gray-400 mb-1">{t('villa.weekdayDays', 'Fri - Sat')}</p>
+                                        <p className="text-xs text-gray-400 mb-1">{t('villa.weekendDays', 'Fri - Sat')}</p>
                                         <p className="font-serif text-xl text-forest-dark">{formatPrice(currentVilla.priceWeekend)}</p>
                                     </div>
                                     <div>
@@ -555,7 +559,7 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                                 villaName={currentVilla.name}
                             />
                             <p className="text-center text-xs text-gray-400 mt-4">
-                                *{t('villa.taxNoteShort', 'Harga belum termasuk pajak 10%')}
+                                *{t('villa.taxNoteShort', 'Price excludes 10% tax')}
                             </p>
                         </FadeIn>
                     </div>

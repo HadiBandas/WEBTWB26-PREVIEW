@@ -131,6 +131,78 @@ export function ContactPage() {
                 </div>
             </section>
 
+            {/* Reservation Specialists - Personal Concierge Service */}
+            <section className="py-24 bg-gray-50/50">
+                <div className="container mx-auto px-6 md:px-8">
+                    <FadeIn className="text-center mb-16">
+                        <span className="text-forest text-xs font-medium tracking-[0.2em] uppercase mb-4 block">{t('contact.specialists.subtitle')}</span>
+                        <h2 className="font-serif text-3xl md:text-4xl text-gray-900 mb-6">
+                            {t('contact.specialists.title')}
+                        </h2>
+                        <p className="text-gray-600 font-light max-w-2xl mx-auto text-lg">
+                            {t('contact.specialists.desc')}
+                        </p>
+                    </FadeIn>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                        {/* Jaka */}
+                        <ScaleIn delay={0.1} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-all duration-300 group h-full">
+                            <div className="w-20 h-20 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-6 text-forest font-serif text-2xl group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                                J
+                            </div>
+                            <h3 className="font-serif text-2xl text-gray-900 mb-1">Jaka</h3>
+                            <p className="text-xs uppercase tracking-[0.15em] text-gray-400 mb-6">{t('contact.specialists.role')}</p>
+                            <a
+                                href={`https://wa.me/6281224178271?text=${encodeURIComponent(t('contact.specialists.messages.jaka', 'Halo Kak Jaka, saya tertarik untuk reservasi di Taman Wisata Bougenville'))}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-green-600 hover:text-white transition-all duration-300 w-full justify-center"
+                            >
+                                <MessageCircle size={18} />
+                                {t('contact.specialists.chatWith', { name: 'Jaka' })}
+                            </a>
+                        </ScaleIn>
+
+                        {/* Iis */}
+                        {/* removed recommended badge for equality */}
+                        <ScaleIn delay={0.2} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-all duration-300 group h-full">
+                            <div className="w-20 h-20 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-6 text-forest font-serif text-2xl group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                                I
+                            </div>
+                            <h3 className="font-serif text-2xl text-gray-900 mb-1">Iis</h3>
+                            <p className="text-xs uppercase tracking-[0.15em] text-gray-400 mb-6">{t('contact.specialists.role')}</p>
+                            <a
+                                href={`https://wa.me/6281224178271?text=${encodeURIComponent(t('contact.specialists.messages.iis', 'Halo Kak Iis, boleh minta info lebih lanjut tentang villa?'))}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-green-600 hover:text-white transition-all duration-300 w-full justify-center"
+                            >
+                                <MessageCircle size={18} />
+                                {t('contact.specialists.chatWith', { name: 'Iis' })}
+                            </a>
+                        </ScaleIn>
+
+                        {/* Teten */}
+                        <ScaleIn delay={0.3} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 text-center hover:shadow-lg transition-all duration-300 group h-full">
+                            <div className="w-20 h-20 bg-forest/10 rounded-full flex items-center justify-center mx-auto mb-6 text-forest font-serif text-2xl group-hover:bg-forest group-hover:text-white transition-colors duration-300">
+                                T
+                            </div>
+                            <h3 className="font-serif text-2xl text-gray-900 mb-1">Teten</h3>
+                            <p className="text-xs uppercase tracking-[0.15em] text-gray-400 mb-6">{t('contact.specialists.role')}</p>
+                            <a
+                                href={`https://wa.me/6281224178271?text=${encodeURIComponent(t('contact.specialists.messages.teten', 'Halo Kak Teten, saya mau cek ketersediaan untuk tanggal...'))}`}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="inline-flex items-center gap-2 bg-green-50 text-green-700 px-6 py-3 rounded-full text-sm font-medium hover:bg-green-600 hover:text-white transition-all duration-300 w-full justify-center"
+                            >
+                                <MessageCircle size={18} />
+                                {t('contact.specialists.chatWith', { name: 'Teten' })}
+                            </a>
+                        </ScaleIn>
+                    </div>
+                </div>
+            </section>
+
             {/* Contact Form & Map - Refined */}
             <section className="py-24 md:py-32 bg-gray-50">
                 <div className="container mx-auto px-6 md:px-8">
@@ -162,7 +234,7 @@ export function ContactPage() {
                             </p>
                             <div className="h-[500px] w-full shadow-2xl rounded-sm overflow-hidden border-4 border-white">
                                 <MapEmbed
-                                    address="Jl. Gunung Puntang, Desa Ciwidey, Kab. Bandung, Jawa Barat 40228, Indonesia"
+                                    address={t('location.fullAddress', 'Jl. Gunung Puntang, Desa Ciwidey, Kab. Bandung, Jawa Barat 40228, Indonesia')}
                                     googleMapsUrl="https://maps.google.com/?q=Gunung+Puntang+Bandung"
                                 />
                             </div>

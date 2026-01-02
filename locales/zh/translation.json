@@ -62,7 +62,10 @@
         "subscribe": "订阅",
         "copyright": "© 2024 布根维尔旅游公园。版权所有。",
         "privacyPolicy": "隐私政策",
-        "termsOfService": "服务条款"
+        "termsOfService": "服务条款",
+        "reception": "前台",
+        "inquiries": "咨询",
+        "visitUs": "访问我们"
     },
     "trust": {
         "reviews": "5星级评价",
@@ -71,9 +74,17 @@
         "media": "KOMPAS · DETIK"
     },
     "villa": {
+        "categories": {
+            "all": "所有别墅",
+            "luxury": "豪华系列",
+            "log_home": "原木小屋",
+            "couple": "情侣专享"
+        },
+        "freeBreakfast": "免费早餐",
         "amenities": "设施",
         "description": "描述",
         "availability": "可用性",
+        "pax": "人",
         "capacity": "容量",
         "bedrooms": "卧室",
         "bathrooms": "浴室",
@@ -165,9 +176,49 @@
         "email": "电子邮件",
         "phone": "电话",
         "message": "留言",
+        "chatNow": "立即聊天",
+        "sendEmail": "发送电子邮件",
+        "formLabel": "Message & Questions",
+        "form": {
+            "fullName": "全名",
+            "emailAddress": "电子邮件地址",
+            "phone": "电话号码",
+            "checkIn": "预计入住日期",
+            "checkOut": "预计退房日期",
+            "messageLabel": "留言",
+            "sending": "发送中...",
+            "submit": "发送消息",
+            "success": "谢谢！您的消息已成功发送。",
+            "placeholders": {
+                "name": "张三",
+                "email": "zhangsan@example.com",
+                "phone": "+86 123 4567 8901",
+                "message": "请告诉我们您的需求..."
+            },
+            "validation": {
+                "nameRequired": "姓名为必填项",
+                "emailRequired": "电子邮件为必填项",
+                "emailInvalid": "无效的电子邮件格式",
+                "phoneRequired": "电话号码为必填项",
+                "phoneInvalid": "无效的电话号码",
+                "messageRequired": "留言内容为必填项"
+            }
+        },
         "send": "发送消息",
         "address": "西爪哇万隆泰山路",
-        "openHours": "周一至周日:上午8:00 - 晚上8:00"
+        "openHours": "周一至周日:上午8:00 - 晚上8:00",
+        "specialists": {
+            "title": "认识我们的预订专家",
+            "subtitle": "个人协助",
+            "desc": "为了获得更个性化的体验，请直接联系我们致力于帮助您满足预订需求的团队成员。",
+            "chatWith": "聊天 {{name}}",
+            "role": "预订专家",
+            "messages": {
+                "jaka": "嗨 Jaka，我有兴趣在 Taman Wisata Bougenville 预订",
+                "iis": "嗨 Iis，能否提供有关别墅的更多信息？",
+                "teten": "嗨 Teten，我想查询日期的空房情况..."
+            }
+        }
     },
     "faq": {
         "title": "常见问题",
@@ -202,20 +253,20 @@
             "local": "本地",
             "title": "源头新鲜",
             "desc": "我们相信最好的味道来自大自然本身。我们的蔬菜直接从我们自己的花园采摘，香料来自当地的 Puntang 农民。"
-        },
-        "reservation": {
-            "hoursTitle": "营业时间",
-            "day": "周一至周日",
-            "reservationTitle": "预订",
-            "locationTitle": "位置"
-        },
-        "cta": {
-            "title": "预订您的餐桌",
-            "subtitle": "建议日落晚餐和特殊场合提前预订",
-            "button": "立即预订",
-            "viewMenu": "查看完整菜单",
-            "discover": "发现山地餐饮的魔力。"
         }
+    },
+    "reservation": {
+        "hoursTitle": "营业时间",
+        "day": "周一至周日",
+        "reservationTitle": "预订",
+        "locationTitle": "位置"
+    },
+    "cta": {
+        "title": "预订您的餐桌",
+        "subtitle": "建议日落晚餐和特殊场合提前预订",
+        "button": "立即预订",
+        "viewMenu": "查看完整菜单",
+        "discover": "发现山地餐饮的魔力。"
     },
     "facility": {
         "title": "设施与体验",
@@ -241,8 +292,11 @@
             "villas": "别墅",
             "nature": "自然",
             "facilities": "设施",
-            "events": "活动"
-        }
+            "events": "活动",
+            "dining": "餐饮",
+            "activities": "活动"
+        },
+        "empty": "该类别暂无图片。"
     },
     "location": {
         "title": "我们的位置",
@@ -298,12 +352,34 @@
     "seo": {
         "homeTitle": "布根维尔旅游公园 | 专属山林度假胜地",
         "homeDescription": "在布根维尔旅游公园体验大自然的宁静。豪华别墅、正宗巽他美食和泰山户外探险。",
+        "villasPage": {
+            "all": {
+                "title": "万隆别墅 | 布根维尔旅游公园 - 家庭和团体别墅出租",
+                "description": "万隆家庭和团体别墅出租。位于泰山的家庭别墅、豪华别墅和情侣别墅的完整选择。",
+                "keywords": "万隆别墅, 万隆家庭别墅, 万隆团体别墅, 万隆别墅出租, 万隆聚会别墅"
+            },
+            "luxury": {
+                "title": "万隆豪华别墅 | 布根维尔旅游公园 - 高级豪华系列",
+                "description": "万隆豪华别墅，配备一流设施。在泰山租用豪华家庭别墅进行独家聚会。Forest House, Mooi Lake 和最佳豪华系列。",
+                "keywords": "万隆豪华别墅, 豪华家庭别墅, 租用豪华别墅, 万隆高级别墅, 万隆独家别墅"
+            },
+            "log_home": {
+                "title": "万隆家庭别墅 | 布根维尔旅游公园 - 原木小屋与自然旅馆",
+                "description": "万隆原木小屋风格的家庭别墅。位于泰山的具有正宗木质氛围的自然旅馆。租用别墅进行家庭聚会。",
+                "keywords": "万隆家庭别墅, 万隆住宿, 租用万隆别墅, 万隆木制别墅, 万隆原木小屋, 自然别墅"
+            },
+            "couple": {
+                "title": "万隆情侣别墅 | 布根维尔旅游公园 - 浪漫小屋度假",
+                "description": "万隆情侣别墅，适合浪漫蜜月。位于泰山的私密情侣小屋别墅。最佳蜜月和浪漫度假套餐。",
+                "keywords": "万隆小屋别墅, 万隆情侣别墅, 万隆浪漫别墅, 万隆蜜月别墅, 情侣度假"
+            }
+        },
         "villasTitle": "豪华别墅 - 布根维尔旅游公园",
         "villasDescription": "从我们的专属别墅系列中选择,配有私人泳池、山景和高端设施。",
         "restoTitle": "餐饮与活动 - 布根维尔旅游公园",
         "restoDescription": "享受正宗巽他美食,在我们的宴会厅举办您的特别活动。",
         "facilityTitle": "设施与体验 - 布根维尔旅游公园",
-        "facilityDescription": "探索各种户外和室内活动,享受完美的度假体验。"
+        "facilityDescription": "探索各种户外和室内活动,享受完美的度假体验."
     },
     "common": {
         "learnMore": "了解更多",
@@ -362,5 +438,10 @@
             "item1": "玻璃瓶和过滤水站",
             "item2": "竹制和玉米淀粉用品"
         }
+    },
+    "sticky": {
+        "checkAvailability": "检查可用性",
+        "bookNow": "立即预订",
+        "whatsappMessage": "您好！我想在布根维尔旅游公园预订。"
     }
 }

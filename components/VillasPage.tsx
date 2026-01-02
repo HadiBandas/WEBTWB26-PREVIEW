@@ -169,10 +169,10 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
   };
 
   const categories = [
-    { id: 'all', label: 'All Villas', icon: Home },
-    { id: 'luxury', label: 'Luxury Collection', icon: Sparkles },
-    { id: 'log_home', label: 'Log Cabin', icon: TreePine },
-    { id: 'couple', label: 'Couples Only', icon: HeartHandshake },
+    { id: 'all', icon: Home },
+    { id: 'luxury', icon: Sparkles },
+    { id: 'log_home', icon: TreePine },
+    { id: 'couple', icon: HeartHandshake },
   ];
 
   const handleTabChange = (tabId: string) => {
@@ -263,7 +263,7 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
             className="mb-8 flex items-center gap-2 text-gray-500 hover:text-forest transition-colors text-sm uppercase tracking-wider font-medium"
           >
             <ArrowLeft size={16} />
-            <span>{t('common.backTo', 'Back to')} {activeTab === 'all' ? t('gallery.categories.all', 'All') : categories.find(c => c.id === activeTab)?.label}</span>
+            <span>{t('common.backTo', 'Back to')} {activeTab === 'all' ? t('villa.categories.all', 'All') : t(`villa.categories.${activeTab}`)}</span>
           </button>
           <div className="mb-8">
             <h2 className="text-3xl font-serif text-gray-900 mb-2">{currentClusterObj?.name}</h2>
@@ -421,26 +421,26 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
 
   // SEO Keywords per category - Dynamic targeting
   const seoKeywords = {
-    all: 'villa di bandung, villa keluarga bandung, villa rombongan di bandung, sewa villa bandung murah, villa gathering bandung, villa besar bandung',
-    luxury: 'villa mewah di bandung, villa mewah keluarga, sewa villa mewah, luxury villa bandung, villa premium bandung, villa eksklusif bandung',
-    log_home: 'villa keluarga bandung, penginapan bandung, sewa villa bandung, villa kayu bandung, log cabin bandung, villa alam bandung',
-    couple: 'villa cabin bandung, villa pasangan bandung, villa romantis bandung, honeymoon villa bandung, villa couple retreat, villa bulan madu bandung'
+    all: t('seo.villasPage.all.keywords'),
+    luxury: t('seo.villasPage.luxury.keywords'),
+    log_home: t('seo.villasPage.log_home.keywords'),
+    couple: t('seo.villasPage.couple.keywords')
   };
 
   // SEO Titles per category - More specific
   const seoTitles = {
-    all: 'Villa di Bandung | Taman Wisata Bougenville - Sewa Villa Keluarga & Rombongan',
-    luxury: 'Villa Mewah di Bandung | Taman Wisata Bougenville - Luxury Collection Premium',
-    log_home: 'Villa Keluarga Bandung | Taman Wisata Bougenville - Log Cabin & Penginapan Alam',
-    couple: 'Villa Pasangan Bandung | Taman Wisata Bougenville - Romantic Cabin Retreat'
+    all: t('seo.villasPage.all.title'),
+    luxury: t('seo.villasPage.luxury.title'),
+    log_home: t('seo.villasPage.log_home.title'),
+    couple: t('seo.villasPage.couple.title')
   };
 
   // SEO Descriptions per category - Keyword-rich
   const seoDescriptions = {
-    all: 'Sewa villa di Bandung untuk keluarga dan rombongan. Pilihan lengkap villa keluarga, villa mewah, dan villa pasangan di Gunung Puntang. Harga terjangkau, fasilitas lengkap.',
-    luxury: 'Villa mewah di Bandung dengan fasilitas premium. Sewa villa mewah keluarga untuk gathering eksklusif di Gunung Puntang. Forest House, Mooi Lake, dan koleksi luxury terbaik.',
-    log_home: 'Villa keluarga Bandung bergaya log cabin. Penginapan alam dengan nuansa kayu autentik di Gunung Puntang. Sewa villa Bandung untuk family gathering dan acara besar.',
-    couple: 'Villa pasangan Bandung untuk honeymoon romantis. Villa cabin khusus couple dengan privasi tinggi di Gunung Puntang. Paket bulan madu dan romantic getaway terbaik.'
+    all: t('seo.villasPage.all.description'),
+    luxury: t('seo.villasPage.luxury.description'),
+    log_home: t('seo.villasPage.log_home.description'),
+    couple: t('seo.villasPage.couple.description')
   };
 
   return (
@@ -454,7 +454,7 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
         ogUrl={`https://tamanwisatabougenville.com/villas${activeTab !== 'all' ? `?category=${activeTab}` : ''}`}
       />
       {/* Hero Section */}
-      <div className="relative h-[40vh] md:h-[50vh] flex items-center justify-center overflow-hidden">
+      <div className="relative min-h-[50vh] md:min-h-[60vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0">
           <img
             src={currentContent.image}
@@ -464,14 +464,14 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
           <div className="absolute inset-0 bg-black/40" />
         </div>
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
-          <span className="inline-block py-1 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-xs tracking-[0.2em] uppercase mb-4 animate-fade-in-up">
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto pt-20 md:pt-0">
+          <span className="inline-block py-1.5 px-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white text-[10px] md:text-xs tracking-[0.2em] uppercase mb-3 md:mb-4 animate-fade-in-up">
             {getContent(currentContent.subtitle)}
           </span>
-          <h1 className="font-serif text-4xl md:text-5xl text-white mb-4 animate-fade-in-up delay-100">
+          <h1 className="font-serif text-3xl md:text-5xl text-white mb-3 md:mb-4 animate-fade-in-up delay-100 leading-tight">
             {getContent(currentContent.title)}
           </h1>
-          <p className="text-white/90 text-lg font-light leading-loose max-w-2xl mx-auto animate-fade-in-up delay-200">
+          <p className="text-white/90 text-sm md:text-lg font-light leading-relaxed max-w-xl md:max-w-2xl mx-auto animate-fade-in-up delay-200 px-4 md:px-0">
             {getContent(currentContent.description)}
           </p>
         </div>
@@ -488,7 +488,7 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
               <button
                 key={cat.id}
                 onClick={() => handleTabChange(cat.id)}
-                aria-label={`Filter by ${cat.label}`}
+                aria-label={`Filter by ${t(`villa.categories.${cat.id}`)}`}
                 className={`
                   flex items-center gap-2 px-4 py-2 rounded-full text-sm tracking-wide transition-all duration-300 whitespace-nowrap active:scale-95
                   ${activeTab === cat.id
@@ -497,7 +497,7 @@ const VillasPage: React.FC<VillasPageProps> = ({ lang: propLang, onBook, onNavig
                 `}
               >
                 <cat.icon size={16} />
-                <span>{cat.label}</span>
+                <span>{t(`villa.categories.${cat.id}`)}</span>
               </button>
             ))}
           </div>
@@ -579,7 +579,7 @@ const VillaCard: React.FC<{ villa: any }> = ({ villa }) => {
           <div className="w-px h-3 bg-gray-200" />
           <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-wider">
             <Grid3x3 size={14} />
-            <span>{villa.area ? `${villa.area} m²` : 'Free Breakfast'}</span>
+            <span>{villa.area ? `${villa.area} m²` : t('villa.freeBreakfast', 'Free Breakfast')}</span>
           </div>
         </div>
 

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Send, Loader } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 export interface ContactFormProps {
     onSubmit?: (data: ContactFormData) => void;
@@ -17,6 +18,7 @@ export interface ContactFormData {
 }
 
 export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState<ContactFormData>({
         name: prefilledData?.name || '',
         email: prefilledData?.email || '',
@@ -42,12 +44,12 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
     const validate = (): boolean => {
         const newErrors: Partial<Record<keyof ContactFormData, string>> = {};
 
-        if (!formData.name.trim()) newErrors.name = 'Name is required';
-        if (!formData.email.trim()) newErrors.email = 'Email is required';
-        else if (!validateEmail(formData.email)) newErrors.email = 'Invalid email format';
-        if (!formData.phone.trim()) newErrors.phone = 'Phone number is required';
-        else if (!validatePhone(formData.phone)) newErrors.phone = 'Invalid phone number';
-        if (!formData.message.trim()) newErrors.message = 'Message is required';
+        if (!formData.name.trim()) newErrors.name = t('contact.form.validation.nameRequired', 'Name is required');
+        if (!formData.email.trim()) newErrors.email = t('contact.form.validation.emailRequired', 'Email is required');
+        else if (!validateEmail(formData.email)) newErrors.email = t('contact.form.validation.emailInvalid', 'Invalid email format');
+        if (!formData.phone.trim()) newErrors.phone = t('contact.form.validation.phoneRequired', 'Phone number is required');
+        else if (!validatePhone(formData.phone)) newErrors.phone = t('contact.form.validation.phoneInvalid', 'Invalid phone number');
+        if (!formData.message.trim()) newErrors.message = t('contact.form.validation.messageRequired', 'Message is required');
 
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
@@ -122,14 +124,14 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="name" className="block text-sm font-bold text-gray-900 mb-2">
-                        Full Name *
+                        {t('contact.form.fullName')} *
                     </label>
                     <input
                         id="name"
                         type="text"
                         value={formData.name}
                         onChange={(e) => handleChange('name', e.target.value)}
-                        placeholder="John Doe"
+                        placeholder={t('contact.form.placeholders.name')}
                         className={`w-full h-12 px-4 border rounded-sm focus:outline-none focus:ring-2 focus:ring-forest transition-all ${errors.name ? 'border-error' : 'border-gray-300'
                             }`}
                     />
@@ -138,14 +140,14 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
 
                 <div>
                     <label htmlFor="email" className="block text-sm font-bold text-gray-900 mb-2">
-                        Email Address *
+                        {t('contact.form.emailAddress')} *
                     </label>
                     <input
                         id="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => handleChange('email', e.target.value)}
-                        placeholder="john@example.com"
+                        placeholder={t('contact.form.placeholders.email')}
                         className={`w-full h-12 px-4 border rounded-sm focus:outline-none focus:ring-2 focus:ring-forest transition-all ${errors.email ? 'border-error' : 'border-gray-300'
                             }`}
                     />
@@ -155,14 +157,14 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
 
             <div>
                 <label htmlFor="phone" className="block text-sm font-bold text-gray-900 mb-2">
-                    Phone Number *
+                    {t('contact.form.phone')} *
                 </label>
                 <input
                     id="phone"
                     type="tel"
                     value={formData.phone}
                     onChange={(e) => handleChange('phone', e.target.value)}
-                    placeholder="+62 812 3456 7890"
+                    placeholder={t('contact.form.placeholders.phone')}
                     className={`w-full h-12 px-4 border rounded-sm focus:outline-none focus:ring-2 focus:ring-forest transition-all ${errors.phone ? 'border-error' : 'border-gray-300'
                         }`}
                 />
@@ -172,7 +174,7 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                     <label htmlFor="checkIn" className="block text-sm font-bold text-gray-900 mb-2">
-                        Preferred Check-in Date
+                        {t('contact.form.checkIn')}
                     </label>
                     <input
                         id="checkIn"
@@ -185,7 +187,7 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
 
                 <div>
                     <label htmlFor="checkOut" className="block text-sm font-bold text-gray-900 mb-2">
-                        Preferred Check-out Date
+                        {t('contact.form.checkOut')}
                     </label>
                     <input
                         id="checkOut"
@@ -199,13 +201,13 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
 
             <div>
                 <label htmlFor="message" className="block text-sm font-bold text-gray-900 mb-2">
-                    Message *
+                    {t('contact.form.messageLabel')} *
                 </label>
                 <textarea
                     id="message"
                     value={formData.message}
                     onChange={(e) => handleChange('message', e.target.value)}
-                    placeholder="Tell us about your inquiry..."
+                    placeholder={t('contact.form.placeholders.message')}
                     rows={5}
                     className={`w-full px-4 py-3 border rounded-sm focus:outline-none focus:ring-2 focus:ring-forest transition-all ${errors.message ? 'border-error' : 'border-gray-300'
                         }`}
@@ -215,7 +217,7 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
 
             {submitSuccess && (
                 <div className="bg-success/10 border border-success text-success px-4 py-3 rounded-sm">
-                    Thank you! Your message has been sent successfully.
+                    {t('contact.form.success', 'Thank you! Your message has been sent successfully.')}
                 </div>
             )}
 
@@ -227,12 +229,12 @@ export function ContactForm({ onSubmit, prefilledData }: ContactFormProps) {
                 {isSubmitting ? (
                     <>
                         <Loader size={18} className="animate-spin" />
-                        <span>Sending...</span>
+                        <span>{t('contact.form.sending', 'Sending...')}</span>
                     </>
                 ) : (
                     <>
                         <Send size={18} />
-                        <span>Send Message</span>
+                        <span>{t('contact.form.submit', 'Send Message')}</span>
                     </>
                 )}
             </button>

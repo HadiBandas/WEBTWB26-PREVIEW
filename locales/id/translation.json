@@ -66,7 +66,10 @@
         "selectVilla": "Pilih Villa",
         "submit": "Kirim Permintaan",
         "whatsappBooking": "Pesan via WhatsApp",
-        "copyright": "© 2025 Taman Wisata Bougenville. Hak Cipta Dilindungi."
+        "copyright": "© 2025 Taman Wisata Bougenville. Hak Cipta Dilindungi.",
+        "reception": "Resepsionis",
+        "inquiries": "Pertanyaan",
+        "visitUs": "Kunjungi Kami"
     },
     "trust": {
         "reviews": "Ulasan 5 Bintang",
@@ -124,11 +127,50 @@
         "openHours": "Senin - Minggu: 08:00 - 20:00",
         "contactLabel": "Hubungi Kami",
         "contactTitle": "Hubungi Tim Kami",
+        "chatNow": "Chat Sekarang",
+        "sendEmail": "Kirim Email",
         "formLabel": "Pesan & Pertanyaan",
+        "form": {
+            "fullName": "Nama Lengkap",
+            "emailAddress": "Alamat Email",
+            "phone": "Nomor Telepon",
+            "checkIn": "Tanggal Check-in",
+            "checkOut": "Tanggal Check-out",
+            "messageLabel": "Pesan",
+            "sending": "Mengirim...",
+            "submit": "Kirim Pesan",
+            "success": "Terima kasih! Pesan Anda telah berhasil dikirim.",
+            "placeholders": {
+                "name": "Nama Anda",
+                "email": "email@contoh.com",
+                "phone": "+62 812 3456 7890",
+                "message": "Tulis pesan Anda di sini..."
+            },
+            "validation": {
+                "nameRequired": "Nama wajib diisi",
+                "emailRequired": "Email wajib diisi",
+                "emailInvalid": "Format email tidak valid",
+                "phoneRequired": "Nomor telepon wajib diisi",
+                "phoneInvalid": "Nomor telepon tidak valid",
+                "messageRequired": "Pesan wajib diisi"
+            }
+        },
         "locationLabel": "Lokasi Kami",
         "faqTitle": "Punya Pertanyaan?",
         "faqDesc": "Cek pertanyaan umum kami untuk jawaban cepat mengenai pemesanan, fasilitas, dan kebijakan.",
-        "viewFaq": "Lihat FAQ"
+        "viewFaq": "Lihat FAQ",
+        "specialists": {
+            "title": "Temui Spesialis Reservasi Kami",
+            "subtitle": "Bantuan Personal",
+            "desc": "Untuk pengalaman yang lebih personal, hubungi langsung anggota tim kami yang berdedikasi untuk membantu kebutuhan pemesanan Anda.",
+            "chatWith": "Hubungi {{name}}",
+            "role": "Spesialis Reservasi",
+            "messages": {
+                "jaka": "Halo Kak Jaka, saya tertarik untuk reservasi di Taman Wisata Bougenville",
+                "iis": "Halo Kak Iis, boleh minta info lebih lanjut tentang villa?",
+                "teten": "Halo Kak Teten, saya mau cek ketersediaan untuk tanggal..."
+            }
+        }
     },
     "faq": {
         "title": "Pertanyaan Umum",
@@ -202,8 +244,11 @@
             "villas": "Villa",
             "nature": "Alam",
             "facilities": "Fasilitas",
-            "events": "Acara"
-        }
+            "events": "Acara",
+            "dining": "Kuliner",
+            "activities": "Aktivitas"
+        },
+        "empty": "Belum ada gambar dalam kategori ini."
     },
     "location": {
         "title": "Lokasi Kami",
@@ -274,9 +319,17 @@
         "facilityDescription": "Jelajahi berbagai aktivitas outdoor dan indoor untuk pengalaman liburan yang sempurna."
     },
     "villa": {
+        "categories": {
+            "all": "Semua Villa",
+            "luxury": "Koleksi Mewah",
+            "log_home": "Rumah Kayu",
+            "couple": "Khusus Pasangan"
+        },
+        "freeBreakfast": "Sarapan Gratis",
         "amenities": "Fasilitas",
         "description": "Deskripsi",
         "availability": "Ketersediaan",
+        "pax": "Orang",
         "capacity": "Kapasitas",
         "bedrooms": "Kamar Tidur",
         "bathrooms": "Kamar Mandi",
@@ -380,5 +433,10 @@
             "item1": "Botol kaca & stasiun air minum",
             "item2": "Perlengkapan berbahan bambu & pati jagung"
         }
+    },
+    "sticky": {
+        "checkAvailability": "Cek Ketersediaan",
+        "bookNow": "Pesan Sekarang",
+        "whatsappMessage": "Halo! Saya ingin melakukan reservasi di Taman Wisata Bougenville."
     }
 }

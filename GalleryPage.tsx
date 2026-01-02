@@ -66,10 +66,10 @@ export function GalleryPage() {
     };
 
     const categories = [
-        { key: 'villas' as Category, label: 'Villas' },
-        { key: 'nature' as Category, label: 'Nature' },
-        { key: 'dining' as Category, label: 'Dining' },
-        { key: 'activities' as Category, label: 'Activities' },
+        { key: 'villas' as Category, label: t('gallery.categories.villas', 'Villas') },
+        { key: 'nature' as Category, label: t('gallery.categories.nature', 'Nature') },
+        { key: 'dining' as Category, label: t('gallery.categories.dining', 'Dining') },
+        { key: 'activities' as Category, label: t('gallery.categories.activities', 'Activities') },
     ];
 
     useEffect(() => {
@@ -149,7 +149,7 @@ export function GalleryPage() {
                 {/* Empty State - Refined */}
                 {currentImages.length === 0 && (
                     <div className="text-center py-32">
-                        <p className="text-gray-400 text-lg font-light font-serif italic">No images in this category yet.</p>
+                        <p className="text-gray-400 text-lg font-light font-serif italic">{t('gallery.empty', 'No images in this category yet.')}</p>
                     </div>
                 )}
             </div>

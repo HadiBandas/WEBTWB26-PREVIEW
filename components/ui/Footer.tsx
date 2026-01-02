@@ -99,21 +99,21 @@ export function Footer({ navigate }: FooterProps) {
                             <li className="flex items-start gap-4 text-white/60">
                                 <Phone size={18} className="text-gold mt-1 shrink-0" />
                                 <div className="flex flex-col">
-                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">Reception</span>
+                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">{t('footer.reception', 'Reception')}</span>
                                     <span className="hover:text-white transition-colors cursor-pointer">+62 812 3456 7890</span>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4 text-white/60">
                                 <Mail size={18} className="text-gold mt-1 shrink-0" />
                                 <div className="flex flex-col">
-                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">Inquiries</span>
+                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">{t('footer.inquiries', 'Inquiries')}</span>
                                     <span className="hover:text-white transition-colors cursor-pointer">reservation@bougenville.com</span>
                                 </div>
                             </li>
                             <li className="flex items-start gap-4 text-white/60">
                                 <MapPin size={18} className="text-gold mt-1 shrink-0" />
                                 <div className="flex flex-col">
-                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">Visit Us</span>
+                                    <span className="text-xs uppercase tracking-wider mb-1 text-white/40">{t('footer.visitUs', 'Visit Us')}</span>
                                     <span className="hover:text-white transition-colors">Jl. Gn. Puntang, Bandung, Jawa Barat</span>
                                 </div>
                             </li>

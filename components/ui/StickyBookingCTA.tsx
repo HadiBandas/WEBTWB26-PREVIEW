@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Calendar, MessageCircle } from 'lucide-react';
 import { trackWhatsAppBooking, trackBookingStart } from '../../utils/analytics';
 
@@ -23,7 +24,8 @@ export function StickyBookingCTA({
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent('Hello! I would like to make a reservation at Taman Wisata Bougenville.')}`;
+    const { t } = useTranslation();
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(t('sticky.whatsappMessage', 'Hello! I would like to make a reservation at Taman Wisata Bougenville.'))}`;
 
     return (
         <>
@@ -58,7 +60,7 @@ export function StickyBookingCTA({
                         className="bg-forest-dark text-white px-6 py-4 rounded-full shadow-xl hover:bg-forest hover:scale-105 transition-all flex items-center gap-2 font-bold text-sm uppercase tracking-wider"
                     >
                         <Calendar size={20} />
-                        <span>Check Availability</span>
+                        <span>{t('sticky.checkAvailability', 'Check Availability')}</span>
                     </button>
                 </div>
             </div>
@@ -92,7 +94,7 @@ export function StickyBookingCTA({
                         className="flex-1 bg-forest-dark text-white py-3 rounded-lg font-bold text-sm flex items-center justify-center gap-2 active:scale-95 transition-transform"
                     >
                         <Calendar size={18} />
-                        <span>Book Now</span>
+                        <span>{t('sticky.bookNow', 'Book Now')}</span>
                     </button>
                 </div>
             </div>

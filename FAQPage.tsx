@@ -338,7 +338,7 @@ export function FAQPage() {
                         {/* Booking */}
                         <div className="mb-12">
                             <h2 className="font-serif text-3xl font-light text-gray-900 mb-8 tracking-wide">
-                                Booking & Reservations
+                                {t('faq.sections.booking', 'Booking & Reservations')}
                             </h2>
                             <FAQAccordion items={getLocalizedItems(FAQ_DATA.booking)} />
                         </div>
@@ -346,7 +346,7 @@ export function FAQPage() {
                         {/* Check-in/out */}
                         <div className="mb-12">
                             <h2 className="font-serif text-3xl font-light text-gray-900 mb-8 tracking-wide">
-                                Check-in & Check-out
+                                {t('faq.sections.checkin', 'Check-in & Check-out')}
                             </h2>
                             <FAQAccordion items={getLocalizedItems(FAQ_DATA.checkin)} />
                         </div>
@@ -354,7 +354,7 @@ export function FAQPage() {
                         {/* Policy */}
                         <div className="mb-12">
                             <h2 className="font-serif text-3xl font-light text-gray-900 mb-8 tracking-wide">
-                                Policies & Rules
+                                {t('faq.sections.policy', 'Policies & Rules')}
                             </h2>
                             <FAQAccordion items={getLocalizedItems(FAQ_DATA.policy)} />
                         </div>
@@ -362,7 +362,7 @@ export function FAQPage() {
                         {/* Transport */}
                         <div className="mb-12">
                             <h2 className="font-serif text-3xl font-light text-gray-900 mb-8 tracking-wide">
-                                Transportation & Directions
+                                {t('faq.sections.transport', 'Transportation & Directions')}
                             </h2>
                             <FAQAccordion items={getLocalizedItems(FAQ_DATA.transport)} />
                         </div>
@@ -370,7 +370,7 @@ export function FAQPage() {
                         {/* Facilities */}
                         <div className="mb-12">
                             <h2 className="font-serif text-3xl font-light text-gray-900 mb-8 tracking-wide">
-                                Facilities & Amenities
+                                {t('faq.sections.facilities', 'Facilities & Amenities')}
                             </h2>
                             <FAQAccordion items={getLocalizedItems(FAQ_DATA.facilities)} />
                         </div>
@@ -382,11 +382,10 @@ export function FAQPage() {
             <section className="py-20 bg-forest-dark text-white">
                 <div className="container mx-auto px-4 text-center">
                     <h2 className="font-serif text-3xl font-light mb-4 tracking-wide">
-                        Still Have Questions?
+                        {t('faq.stillHaveQuestions.title', 'Still Have Questions?')}
                     </h2>
                     <p className="text-white/90 text-lg font-light mb-8 max-w-2xl mx-auto">
-                        Our friendly team is here to help. Reach out via WhatsApp, phone, or email
-                        and we'll get back to you within 24 hours.
+                        {t('faq.stillHaveQuestions.desc', "Our friendly team is here to help. Reach out via WhatsApp, phone, or email and we'll get back to you within 24 hours.")}
                     </p>
                     <button
                         onClick={() => {
