@@ -6,6 +6,7 @@ import { FadeIn, ScaleIn, Stagger } from './components/ui/animations';
 import { ImageGalleryModal } from './components/features/ImageGalleryModal';
 import { BookingCard } from './components/features/BookingCard';
 import { VILLAS } from './constants';
+import useEmblaCarousel from 'embla-carousel-react';
 import { SEOHead } from './components/ui/SEOHead';
 import { StructuredData } from './components/ui/StructuredData';
 import { trackPageView, trackVillaView } from './utils/analytics';
@@ -83,6 +84,24 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [galleryStartIndex, setGalleryStartIndex] = useState(0);
     const [shareTooltip, setShareTooltip] = useState('');
+
+    // Embla Carousel State
+    const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true });
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+
+        const onSelect = () => {
+            setCurrentSlide(emblaApi.selectedScrollSnap());
+        };
+
+        emblaApi.on('select', onSelect);
+
+        return () => {
+            emblaApi.off('select', onSelect);
+        };
+    }, [emblaApi]);
 
     const currentVilla = VILLAS.find(v => v.id === villaId);
 
@@ -249,23 +268,48 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
 
                 {/* Image Grid - Mobile: Single hero image, Desktop: 1+4 grid */}
                 {/* Mobile Gallery */}
-                <div className="md:hidden relative mb-8 cursor-pointer" onClick={() => handleImageClick(0)}>
-                    <div className="aspect-[4/3] rounded-xl overflow-hidden">
-                        <img
-                            src={optimizeImage(images[0], 800)}
-                            alt={`${currentVilla.name} Main View`}
-                            className="w-full h-full object-cover"
-                            width="800"
-                            height="600"
-                        />
+                {/* Image Grid - Mobile: Slider, Desktop: 1+4 grid */}
+                {/* Mobile Gallery Slider */}
+                <div className="md:hidden relative mb-8">
+                    <div className="overflow-hidden rounded-xl aspect-[4/3] bg-gray-100" ref={emblaRef}>
+                        <div className="flex touch-pan-y">
+                            {images.map((img, idx) => (
+                                <div
+                                    key={idx}
+                                    className="flex-[0_0_100%] min-w-0 relative cursor-pointer"
+                                    onClick={() => handleImageClick(idx)}
+                                >
+                                    <img
+                                        src={optimizeImage(img, 800)}
+                                        alt={`${currentVilla.name} View ${idx + 1}`}
+                                        className="w-full h-full object-cover"
+                                        width="800"
+                                        height="600"
+                                    />
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                    <button
-                        onClick={(e) => { e.stopPropagation(); handleImageClick(0); }}
-                        className="absolute bottom-4 right-4 bg-white/95 backdrop-blur-sm text-forest-dark px-5 py-3 rounded-lg font-medium text-sm flex items-center gap-2 shadow-lg hover:bg-white transition-colors"
-                    >
-                        <Grid3x3 size={18} />
-                        <span>{t('villa.showAllPhotos', 'Show all photos')}</span>
-                    </button>
+
+                    {/* Controls Overlay */}
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
+                        {/* Counter Badge */}
+                        <div className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-white text-xs font-medium tracking-wide shadow-sm">
+                            {currentSlide + 1} / {images.length}
+                        </div>
+
+                        {/* Show All Photos Button */}
+                        <button
+                            onClick={(e) => {
+                                e.stopPropagation();
+                                handleImageClick(0);
+                            }}
+                            className="pointer-events-auto bg-white/95 backdrop-blur-sm text-forest-dark px-4 py-2.5 rounded-lg font-medium text-xs flex items-center gap-2 shadow-lg hover:bg-white transition-colors border border-white/20"
+                        >
+                            <Grid3x3 size={16} />
+                            <span>{t('villa.showAllPhotos', 'Show all photos')}</span>
+                        </button>
+                    </div>
                 </div>
 
                 {/* Desktop Gallery */}
