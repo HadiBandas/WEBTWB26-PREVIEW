@@ -292,21 +292,21 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                     </div>
 
                     {/* Controls Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-end pointer-events-none">
+                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-none">
                         {/* Counter Badge */}
                         <div className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-white text-xs font-medium tracking-wide shadow-sm">
                             {currentSlide + 1} / {images.length}
                         </div>
 
-                        {/* Show All Photos Button */}
+                        {/* Show All Photos Button - Refined */}
                         <button
                             onClick={(e) => {
                                 e.stopPropagation();
                                 handleImageClick(0);
                             }}
-                            className="pointer-events-auto bg-white/95 backdrop-blur-sm text-forest-dark px-4 py-2.5 rounded-lg font-medium text-xs flex items-center gap-2 shadow-lg hover:bg-white transition-colors border border-white/20"
+                            className="pointer-events-auto bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-full font-medium text-xs flex items-center gap-2 shadow-sm hover:bg-black/80 transition-colors border border-white/10"
                         >
-                            <Grid3x3 size={16} />
+                            <Grid3x3 size={14} />
                             <span>{t('villa.showAllPhotos', 'Show all photos')}</span>
                         </button>
                     </div>
