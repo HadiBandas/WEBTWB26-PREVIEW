@@ -211,32 +211,33 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
             />
 
             <div className="container mx-auto px-4 max-w-7xl">
-                {/* Header - Added pt-24 for fixed header clearance on mobile */}
-                {/* Header - Added pt-24 for fixed header clearance on mobile */}
-                <FadeIn className="pt-24 md:pt-8 pb-8" direction="down">
+                {/* Header Section - Proper spacing for fixed header on all viewports */}
+                {/* Mobile: pt-20, Desktop: pt-28 to ensure content clears the sticky header */}
+                <FadeIn className="pt-28 md:pt-28 lg:pt-32 pb-6 md:pb-8" direction="down">
                     <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-4">
                         <div>
                             <h1 className="font-serif text-4xl md:text-5xl font-light tracking-wide mb-2">{currentVilla.name}</h1>
                             <p className="text-forest-dark/80 text-lg font-light tracking-wide">{currentVilla.cluster || currentVilla.category}</p>
                         </div>
-                        <div className="flex items-center gap-3">
+                        {/* Action Buttons - Better mobile styling with proper spacing */}
+                        <div className="flex items-center gap-2 md:gap-3">
                             <button
                                 onClick={handleWishlistToggle}
-                                className="flex items-center gap-2 px-4 py-3 md:px-3 md:py-2 text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-gray-900 transition-colors bg-gray-50 hover:bg-gray-100 rounded-lg md:bg-transparent md:rounded-none md:border-b md:border-transparent md:hover:border-gray-900 md:pb-1"
+                                className="flex items-center gap-2 px-3 py-2.5 md:px-4 md:py-2 text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-gray-600 hover:text-gray-900 transition-all duration-200 bg-white/80 backdrop-blur-sm hover:bg-gray-50 rounded-xl shadow-sm border border-gray-100 md:bg-transparent md:shadow-none md:border-none md:rounded-none md:border-b md:border-transparent md:hover:border-gray-900 md:pb-1"
                             >
-                                <Heart size={18} className={isWishlisted ? 'fill-current text-red-500' : ''} />
+                                <Heart size={16} className={`md:w-[18px] md:h-[18px] ${isWishlisted ? 'fill-current text-red-500' : ''}`} />
                                 <span className="hidden md:inline">{isWishlisted ? t('common.saved', 'Saved') : t('common.save', 'Save')}</span>
                             </button>
                             <div className="relative">
                                 <button
                                     onClick={handleShare}
-                                    className="flex items-center gap-2 px-4 py-3 md:px-3 md:py-2 text-xs uppercase tracking-[0.2em] text-gray-600 hover:text-gray-900 transition-colors bg-gray-50 hover:bg-gray-100 rounded-lg md:bg-transparent md:rounded-none md:border-b md:border-transparent md:hover:border-gray-900 md:pb-1"
+                                    className="flex items-center gap-2 px-3 py-2.5 md:px-4 md:py-2 text-xs uppercase tracking-[0.15em] md:tracking-[0.2em] text-gray-600 hover:text-gray-900 transition-all duration-200 bg-white/80 backdrop-blur-sm hover:bg-gray-50 rounded-xl shadow-sm border border-gray-100 md:bg-transparent md:shadow-none md:border-none md:rounded-none md:border-b md:border-transparent md:hover:border-gray-900 md:pb-1"
                                 >
-                                    <Share2 size={18} />
+                                    <Share2 size={16} className="md:w-[18px] md:h-[18px]" />
                                     <span className="hidden md:inline">{t('common.share', 'Share')}</span>
                                 </button>
                                 {shareTooltip && (
-                                    <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-forest-dark text-white text-xs px-3 py-1 rounded-full whitespace-nowrap animate-fadeIn">
+                                    <div className="absolute -bottom-10 left-1/2 -translate-x-1/2 bg-forest-dark text-white text-xs px-3 py-1.5 rounded-full whitespace-nowrap animate-fadeIn z-10 shadow-lg">
                                         {shareTooltip}
                                     </div>
                                 )}
@@ -244,23 +245,24 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-2 md:flex md:items-center gap-3 md:gap-4 text-sm text-gray-500">
-                        <div className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                            <Users size={18} className="text-forest" />
-                            <span className="font-medium">{currentVilla.capacity}</span>
+                    {/* Villa Info Pills - Improved mobile grid with better visual hierarchy */}
+                    <div className="grid grid-cols-2 md:flex md:items-center gap-2 md:gap-4 text-sm text-gray-500 mt-3 md:mt-0">
+                        <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
+                            <Users size={16} className="text-forest-green md:w-[18px] md:h-[18px]" />
+                            <span className="font-medium text-gray-700">{currentVilla.capacity}</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                            <BedDouble size={18} className="text-forest" />
-                            <span className="font-medium">{currentVilla.bedrooms} {t('villa.bedrooms', 'Bedrooms')}</span>
+                        <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
+                            <BedDouble size={16} className="text-forest-green md:w-[18px] md:h-[18px]" />
+                            <span className="font-medium text-gray-700">{currentVilla.bedrooms} {t('villa.bedrooms', 'Bedrooms')}</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                            <Bath size={18} className="text-forest" />
-                            <span className="font-medium">{currentVilla.toilets || 1} {t('villa.bathrooms', 'Bathrooms')}</span>
+                        <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
+                            <Bath size={16} className="text-forest-green md:w-[18px] md:h-[18px]" />
+                            <span className="font-medium text-gray-700">{currentVilla.toilets || 1} {t('villa.bathrooms', 'Bathrooms')}</span>
                         </div>
                         {currentVilla.area && (
-                            <div className="flex items-center gap-2 bg-gray-50 p-3 rounded-lg md:bg-transparent md:p-0">
-                                <span className="text-forest font-serif font-bold text-sm">m²</span>
-                                <span className="font-medium">{currentVilla.area} m²</span>
+                            <div className="flex items-center gap-2.5 bg-gradient-to-br from-gray-50 to-white p-3 rounded-xl border border-gray-100/80 md:bg-transparent md:border-none md:p-0 shadow-sm md:shadow-none">
+                                <span className="text-forest-green font-serif font-bold text-sm">m²</span>
+                                <span className="font-medium text-gray-700">{currentVilla.area} m²</span>
                             </div>
                         )}
                     </div>
@@ -270,13 +272,15 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                 {/* Mobile Gallery */}
                 {/* Image Grid - Mobile: Slider, Desktop: 1+4 grid */}
                 {/* Mobile Gallery Slider */}
-                <div className="md:hidden relative mb-8">
-                    <div className="overflow-hidden rounded-xl aspect-[4/3] bg-gray-100" ref={emblaRef}>
-                        <div className="flex touch-pan-y">
+                {/* Mobile Gallery Slider - All overlays on photo */}
+                <div className="md:hidden relative mb-6 aspect-[4/3] rounded-2xl shadow-lg overflow-hidden bg-gray-100">
+                    {/* Embla Carousel Container */}
+                    <div className="w-full h-full" ref={emblaRef}>
+                        <div className="flex touch-pan-y h-full">
                             {images.map((img, idx) => (
                                 <div
                                     key={idx}
-                                    className="flex-[0_0_100%] min-w-0 relative cursor-pointer"
+                                    className="flex-[0_0_100%] min-w-0 relative cursor-pointer h-full"
                                     onClick={() => handleImageClick(idx)}
                                 >
                                     <img
@@ -291,24 +295,38 @@ export function VillaDetailPage({ villaId }: VillaDetailPageProps) {
                         </div>
                     </div>
 
-                    {/* Controls Overlay */}
-                    <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-none">
-                        {/* Counter Badge */}
-                        <div className="bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full text-white text-xs font-medium tracking-wide shadow-sm">
-                            {currentSlide + 1} / {images.length}
-                        </div>
+                    {/* === OVERLAYS (positioned on top of the photo) === */}
 
-                        {/* Show All Photos Button - Refined */}
-                        <button
-                            onClick={(e) => {
-                                e.stopPropagation();
-                                handleImageClick(0);
-                            }}
-                            className="pointer-events-auto bg-black/60 backdrop-blur-md text-white px-3 py-1.5 rounded-full font-medium text-xs flex items-center gap-2 shadow-sm hover:bg-black/80 transition-colors border border-white/10"
-                        >
-                            <Grid3x3 size={14} />
-                            <span>{t('villa.showAllPhotos', 'Show all photos')}</span>
-                        </button>
+                    {/* Top-Left: Show All Photos Button */}
+                    <button
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleImageClick(0);
+                        }}
+                        className="absolute top-3 left-3 bg-white/95 backdrop-blur-md text-gray-800 px-3 py-2 rounded-xl font-medium text-xs flex items-center gap-2 shadow-lg hover:bg-white transition-all duration-200 border border-gray-100/50 z-20"
+                    >
+                        <Grid3x3 size={14} />
+                        <span>{t('villa.showAllPhotos', 'Show all photos')}</span>
+                    </button>
+
+                    {/* Top-Right: Counter Badge */}
+                    <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-md px-2.5 py-1 rounded-full text-white text-xs font-medium tracking-wide shadow-md z-20">
+                        {currentSlide + 1} / {images.length}
+                    </div>
+
+                    {/* Bottom-Center: Slide Indicator Dots - OVERLAY on photo */}
+                    <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 z-20">
+                        {images.slice(0, 5).map((_, idx) => (
+                            <div
+                                key={idx}
+                                className={`h-2 rounded-full transition-all duration-300 ${currentSlide === idx
+                                    ? 'bg-white w-6 shadow-md'
+                                    : currentSlide > 4 && idx === 4
+                                        ? 'bg-white/70 w-2'
+                                        : 'bg-white/50 w-2 hover:bg-white/70'
+                                    }`}
+                            />
+                        ))}
                     </div>
                 </div>
 
